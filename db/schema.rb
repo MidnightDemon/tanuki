@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20130228175125) do
 
   create_table "calendar_entries", :force => true do |t|
-    t.time     "date"
+    t.string   "date"
     t.integer  "slot"
     t.string   "content"
     t.datetime "created_at", :null => false

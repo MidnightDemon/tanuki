@@ -1,6 +1,7 @@
 Blog::Application.routes.draw do
   resources :posts
   resources :calendar
+   resources :calendar_entries
 
   get "home/index"
 
