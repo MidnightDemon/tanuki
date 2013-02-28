@@ -1,0 +1,47 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$charcoal: #333;
+$smoke: #fefefe;
+$fade: #eee;
+
+div.calendar {
+  display: inline-block; 
+  background-color: $charcoal;
+
+  table tbody {
+    tr {
+	  width: inherit;
+	}
+	
+    tr.header {
+      td.header {
+	    width:14.28%; 
+	    text-align:center; 
+	    display:table-cell;
+		
+		div {
+		  width:90px;
+		  height:20px;
+		  background-color: $smoke;
+		}
+	  }
+	}
+	
+	tr td {
+	  text-align:center;	
+	  
+	  div {
+	    height: 50px;
+	  }
+	  div:not(wday) {
+         background-color: $fade;
+      }
+	  div.wday {
+         background-color: $smoke;
+		 text-align: left;
+      }
+	}
+  }
+}

@@ -1,0 +1,33 @@
+<%= form_for(@entry) do |f| %>
+  <% if @entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@entry.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @entry.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%# f.label :date %><br />
+    <%# f.date_select :date %>
+	
+	<%= f.label :date %><br />
+    <%= f.text_field :date %>
+  </div>
+  <div class="field">
+    <%= f.label :slot %><br />
+	<%= f.text_field :slot %>
+    <%# f.select_tag(:slot, options_for_select([['Snack', 1], ['Breakfast', 2], ['Lunch', 3], ['Dinner', 4], ['Snack', 5]]) %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
