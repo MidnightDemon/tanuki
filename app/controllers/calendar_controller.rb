@@ -1,10 +1,6 @@
 class CalendarController < ApplicationController
   # GET /posts
   # GET /posts.json
-  
-  def self.increment(date)
-	return date+1
-  end
 	
   def index
     @currDate = 1
