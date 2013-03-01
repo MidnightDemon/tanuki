@@ -2,11 +2,11 @@ class CalendarEntriesController < ApplicationController
   # GET /calendar_entries
   # GET /calendar_entries.json
   def index
-    @entries = CalendarEntry.all
+    @entry = CalendarEntry.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @posts }
+      format.json { render json: @entry }
     end
   end
 
@@ -17,7 +17,7 @@ class CalendarEntriesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @entries }
+      format.json { render json: @entry }
     end
   end
 
@@ -32,6 +32,13 @@ class CalendarEntriesController < ApplicationController
     end
   end  
   
+  # GET /calendar_entries/1/edit
+  def edit
+    @entry = CalendarEntry.find(params[:id])
+  end  
+  
+  # POST /calendar_entries
+  # POST /calendar_entries.json    
   def create
     @entry = CalendarEntry.new(params[:entry])
 
@@ -46,16 +53,6 @@ class CalendarEntriesController < ApplicationController
     end  
   end
   
-=begin
-  # GET /calendar_entries/1/edit
-  def edit
-    @entry = CalendarEntry.find(params[:id])
-  end
-
-  # POST /calendar_entries
-  # POST /calendar_entries.json
-
-
   # PUT /posts/1
   # PUT /posts/1.json
   def update
@@ -71,7 +68,7 @@ class CalendarEntriesController < ApplicationController
       end
     end 
   end
-
+  
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
@@ -79,8 +76,8 @@ class CalendarEntriesController < ApplicationController
     @entry.destroy
 
     respond_to do |format|
-      format.html { redirect_to calendar_url }
+      format.html { redirect_to :back }
       format.json { head :no_content }
     end  
-=end
+  end
 end

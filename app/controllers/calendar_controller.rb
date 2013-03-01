@@ -3,11 +3,11 @@ class CalendarController < ApplicationController
   # GET /posts.json
   
   def self.increment(date)
-	return Time.local(Time.now.year, Time.now.mon, date.day+1)
+	return date+1
   end
 	
   def index
-    @currDate = Time.local(Time.now.year, Time.now.mon, 1)
+    @currDate = 1
     @startDate = Time.local(Time.now.year, Time.now.mon, 1)
   
     # GET /calendarentries
