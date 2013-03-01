@@ -40,7 +40,7 @@ class CalendarEntriesController < ApplicationController
   # POST /calendar_entries
   # POST /calendar_entries.json    
   def create
-    @entry = CalendarEntry.new(params[:entry])
+    @entry = CalendarEntry.new(params[:calendar_entry])
 
     respond_to do |format|
       if @entry.save
