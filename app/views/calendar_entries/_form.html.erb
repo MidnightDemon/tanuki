@@ -13,13 +13,11 @@
 
   <div class="field">
     <%= f.label :date %><br />
-    <%# f.date_select :date %>
-    <%= f.text_field :date %>
+    <%= f.date_select :date %>
   </div>
   <div class="field">
-    <%= f.label :slot %><br />
-	<%= f.text_field :slot %>
-    <%# f.select_tag(:slot, options_for_select([['Snack', 1], ['Breakfast', 2], ['Lunch', 3], ['Dinner', 4], ['Snack', 5]]) %>
+    <%= f.label "Time slot" %><br />
+	<%= f.collection_select(:food_time_id, FoodTime.all, :id, :name) %>
   </div>
   <div class="field">
     <%= f.label :content %><br />

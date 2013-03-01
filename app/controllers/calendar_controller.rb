@@ -9,8 +9,10 @@ class CalendarController < ApplicationController
     # GET /calendarentries
     # GET /calendarentries.json 
   
-    @entries = CalendarEntry.all
-	@posts = Post.all
+    @entries = CalendarEntry.first(5).reverse
+
+	#.select("name, date, content, id").first(5).reverse
+	@posts = Post.first(5).reverse
 
     respond_to do |format|
       format.html # index.html.erb

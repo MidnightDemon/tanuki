@@ -2,12 +2,12 @@
 
 <p>
   <b>Date:</b>
-  <%= @entry.date %>
+  <%= @entry.date.to_date() %>
 </p>
 
 <p>
-  <b>Slot:</b>
-  <%= @entry.slot %>
+  <b>Time slot:</b>
+  <%= @entry.food_time.name %>
 </p>
 
 <p>
@@ -15,7 +15,11 @@
   <%= @entry.content %>
 </p>
 
+<p>
+  <b>Updated at:</b>
+  <%= @entry.updated_at %>
+</p>
 
 
-<%# link_to 'Edit', edit_post_path(@post) %> |
+<%# link_to 'Edit', edit_post_path(@post) %>
 <%= link_to 'Back', calendar_index_path %>

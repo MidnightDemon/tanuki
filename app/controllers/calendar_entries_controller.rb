@@ -2,11 +2,12 @@ class CalendarEntriesController < ApplicationController
   # GET /calendar_entries
   # GET /calendar_entries.json
   def index
-    @entry = CalendarEntry.all
+    @entries = CalendarEntry.all
+	#@entries.each do |entry|
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @entry }
+      format.json { render json: @entries }
     end
   end
 
@@ -25,7 +26,7 @@ class CalendarEntriesController < ApplicationController
   # GET /calendar_entries/new.json
   def new
     @entry = CalendarEntry.new
-
+	
     respond_to do |format|
       format.html # new.html.erb
 	  format.json { render json: @entry }
@@ -59,7 +60,7 @@ class CalendarEntriesController < ApplicationController
     @entry = CalendarEntry.find(params[:id])
 
     respond_to do |format|
-      if @entry.update_attributes(params[:post])
+      if @entry.update_attributes(params[:calendar_entry])
         format.html { redirect_to @entry, notice: 'Entry was successfully updated.' }
         format.json { head :no_content }
       else

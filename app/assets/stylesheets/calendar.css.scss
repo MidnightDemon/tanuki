@@ -6,6 +6,10 @@ $charcoal: #333;
 $smoke: #fefefe;
 $fade: #eee;
 
+table.records tr th.header {
+  width: 100px;
+}
+
 div.calendar {
   display: inline-block; 
   background-color: $charcoal;
