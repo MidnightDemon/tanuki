@@ -6,46 +6,70 @@ $charcoal: #333;
 $smoke: #fefefe;
 $fade: #eee;
 
-table.records tr th.header {
-  width: 100px;
+div.today {
+	color: #E0561B;
 }
 
-div.calendar {
-  display: inline-block; 
-  background-color: $charcoal;
+table.records tr th.header {
+	width: 100px;
+}
 
-  table tbody {
-    tr {
-	  width: inherit;
-	}
-	
-    tr.header {
-      td.header {
-	    width:14.28%; 
-	    text-align:center; 
-	    display:table-cell;
+div.board {
+	display: inline;
+
+	div.calendar {
+		display: inline-block; 
+	 	background-color: $charcoal;
+		font-size: 11px;
+
+		table tbody {
+			tr {
+				width: inherit;
+			}
 		
-		div {
-		  width:90px;
-		  height:20px;
-		  background-color: $smoke;
+			tr.header {
+				td.header {
+					width:14.28%; 
+					text-align:center; 
+					display:table-cell;
+				
+					div {
+						$h: 20px;
+						width:90px;
+						height:$h;
+						background-color: $smoke;
+						line-height:$h;
+					}
+				}
+			}
+		
+			tr td {
+				text-align:center;	
+				
+				div {
+					height: 50px;
+				}
+				div:not(wday) {
+					background-color: $fade;
+				}
+				div.wday {
+					background-color: $smoke;
+					text-align: left;
+				}
+			}
 		}
-	  }
 	}
-	
-	tr td {
-	  text-align:center;	
-	  
-	  div {
-	    height: 50px;
-	  }
-	  div:not(wday) {
-         background-color: $fade;
-      }
-	  div.wday {
-         background-color: $smoke;
-		 text-align: left;
-      }
-	}
-  }
+
+	div.todo {
+		display: inline-block; 
+	 	background-color: $charcoal;
+		font-size: 11px;
+		padding-left: 20px;
+
+		ul {
+			li {
+
+			}
+		}
+	}	
 }

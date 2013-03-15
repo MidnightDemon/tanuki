@@ -1,43 +1,62 @@
+<%=stylesheet_link_tag :calendar%> 
+
 <h1>Calendar</h1>
 
 <h2>Today is <%= Time.now.strftime("%A, %B %d %Y") %></h2>
 
-<div class="calendar">
-<table cellpadding="0" cellspacing="1">
-  <tbody>
-  <% 7.times do |row|%>
-    <% if row == 0 %>
-      <tr class="header">
-	<% else %>
-	  <tr>
-    <% end %>  
-	  
-    <% 7.times do |col|%>
-      <% if row == 0 %>
-	    <td class="header">
-		  <div><%= Date::DAYNAMES[col] %></div>
-		</td>
-	  <% else %>
-	    <td>
-		  <div id="<%= row-1 %>-<%= col %>" class="
-		    <% if (col == @startDate.wday || row-1 > 0 || (col > @startDate.wday && row-1 == 0)) &&
-			      ( (7-@startDate.wday) + (row-2)*7 + col < @startDate.end_of_month.day)%>
-			  <%= "wday clickable" %>
-			  ">
-			  <%= @currDate %>
-			  <% @currDate += 1 %>
-			<% else %>
-			">
-			<% end %>  
-		  </div>
-		</td>
+<div class="board">
+  <div class="calendar">
+    <table cellpadding="0" cellspacing="1">
+      <tbody>
+      <% 7.times do |row|%>
+        <% if row == 0 %>
+          <tr class="header">
+        <% else %>
+          <tr>
+        <% end %>  
+    	  
+        <% 7.times do |col|%>
+          <% if row == 0 %>
+            <td class="header">
+              <div><%= Date::DAYNAMES[col] %></div>
+    		    </td>
+          <% else %>
+            <td>
+              <div id="<%= row-1 %>-<%= col %>" class="
+    		        <% if (col == @startDate.wday || row-1 > 0 || (col > @startDate.wday && row-1 == 0)) && ( (7-@startDate.wday) + (row-2)*7 + col < @startDate.end_of_month.day)%>
+    		      
+                  <%= "wday clickable" %>
+
+                  <% if (@currDate == Time.now.day) %>
+                    <%= " today" %>
+                  <% end %>
+
+                  ">
+      		        <%= @currDate %>
+      		        <% @currDate += 1 %>
+                <% else %>
+                  ">
+                <% end %>  
+    		      </div>
+    		    </td>
+          <% end %>
+        <% end %>
+        
+        </tr>
       <% end %>
-    <% end %>
-    
-	</tr>
-  <% end %>
-  </tbody>
-</table>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="todo">
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= image_tag task.icon %></td>
+        <td><%= content_tag(:p, task.description) %></td>
+        <td><%= image_tag "/images/icons/check.gif" %></td>
+        <td><%= image_tag "/images/icons/x.png" %></td>
+      </tr>
+  </div>
 </div>
 
 <h2>Newest Calendar Entries</h2>
