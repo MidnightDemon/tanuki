@@ -1,7 +1,4 @@
 class CalendarController < ApplicationController
-  # GET /posts
-  # GET /posts.json
-	
   def index
     @currDate = 1
     @startDate = Time.local(Time.now.year, Time.now.mon, 1)
@@ -10,7 +7,9 @@ class CalendarController < ApplicationController
   
     @entries = CalendarEntry.first(5).reverse
     @posts = Post.first(5).reverse
-    @tasks = Task.all
+
+    @tasks_done = Task.where(:completed => true);
+    @tasks_pending = Task.where(:completed => false).first(5).reverse;
 
     respond_to do |format|
       format.html # index.html.erb

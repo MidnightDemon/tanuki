@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130315230443) do
+ActiveRecord::Schema.define(:version => 20130320220754) do
 
   create_table "calendar_entries", :force => true do |t|
     t.datetime "date",         :limit => 255
@@ -19,13 +19,6 @@ ActiveRecord::Schema.define(:version => 20130315230443) do
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
     t.integer  "food_time_id"
-  end
-
-  create_table "create_tasks_tables", :force => true do |t|
-    t.string   "icon"
-    t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
   end
 
   create_table "food_times", :force => true do |t|
@@ -40,6 +33,14 @@ ActiveRecord::Schema.define(:version => 20130315230443) do
     t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "tasks", :force => true do |t|
+    t.string   "icon"
+    t.string   "description"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.boolean  "completed",   :default => false
   end
 
   create_table "users", :force => true do |t|

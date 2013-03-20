@@ -1,17 +1,18 @@
 Blog::Application.routes.draw do
-  devise_for :users, :path => "auth", :path_names => { 
-    :sign_in => 'login', 
-    :sign_out => 'logout', 
+  devise_for :users, :path => "", :path_names => { 
+    :sign_in => 'sign_in', 
+    :sign_out => 'sign_out', 
     :password => 'secret', 
     :confirmation => 'verification', 
     :unlock => 'unblock', 
     :registration => 'register', 
-    :sign_up => 'cmon_let_me_in' 
+    :sign_up => 'tanuki_wants_in'
   }
 
   # devise_for :users, :path_name => {:sign_in => "login", :sign_out => "logout"}
 
   resources :posts
+  resources :tasks
   resources :calendar
   resources :calendar_entries
 

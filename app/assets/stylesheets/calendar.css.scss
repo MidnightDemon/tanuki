@@ -14,8 +14,25 @@ table.records tr th.header {
 	width: 100px;
 }
 
+.todo.bubble {
+  position: relative;
+	
+	a#new{
+	  position: absolute;
+	  bottom: 10px;
+	}
+}
+
+tr {
+	font-size:13px;
+}
+
+.header {
+	text-align: left;
+}
+
 div.board {
-	display: inline;
+	display: inline-block;
 
 	div.calendar {
 		display: inline-block; 
@@ -25,6 +42,7 @@ div.board {
 		table tbody {
 			tr {
 				width: inherit;
+				font-size:11px;
 			}
 		
 			tr.header {
@@ -63,8 +81,7 @@ div.board {
 	div.todo {
 		display: inline-block; 
 	 	background-color: $charcoal;
-		font-size: 11px;
-		padding-left: 20px;
+		padding-left: 10px;
 
 		ul {
 			li {
