@@ -8,20 +8,22 @@
 	<%= csrf_meta_tags %>
 </head>
 <body style="background: #EEEEEE;">
-
-	<div id="container">
 		
 			<% if signed_in? %>
 				<div id="user_nav">
 					Signed in as <%= current_user.email %>.  Not you? 
-					<%= link_to "Logout", destroy_user_session_path %>
+					<%= link_to "Logout", destroy_user_session_path, :class => "button" %>
 				</div>
 
-				<%= yield %>
+				<div id="container">
+					<%= yield %>
+				</div>
 				
 			<% elsif request.path == new_user_session_path || request.path == new_user_registration_path%>
 
-				<%= yield %>
+				<div id="container">
+					<%= yield %>
+				</div>
 
 			<% else %>
 				<div id="user_nav">

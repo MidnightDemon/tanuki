@@ -66,7 +66,7 @@
           <td><%= image_tag "icons/x.png" %></td>
         </tr>
       <% end %>
-      <% if @tasks_done.count == 0 %>
+      <% if !@tasks_done.any? %>
         <%= "Nothing done yet..." %>
       <% end %>
     </div>

@@ -40,13 +40,23 @@ h4 {
 }
 
 body {
-	width: 900px;
-	margin: 0 auto; 
+	margin: 0;
 }
 
 #user_nav {
-	margin-top:20px;
-	margin-bottom:20px;
+	padding-top:20px;
+	padding-bottom:20px;
+	padding-left: 100px;
+	padding-right: 100px;
+
+	background: #fefefd; /* Old browsers */
+	background: -moz-linear-gradient(top, #fefefd 0%, #dce3c4 42%, #aebf76 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefefd), color-stop(42%,#dce3c4), color-stop(100%,#aebf76)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #fefefd 0%,#dce3c4 42%,#aebf76 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #fefefd 0%,#dce3c4 42%,#aebf76 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #fefefd 0%,#dce3c4 42%,#aebf76 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #fefefd 0%,#dce3c4 42%,#aebf76 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefd', endColorstr='#aebf76',GradientType=0 ); /* IE6-9 */
 }
 
 .indent {
@@ -105,5 +115,10 @@ a {
 }
 
 #container{
-	margin-bottom: 30px;
+	padding-bottom: 30px;
+	padding-top: 30px;
+	width: 900px;
+	margin: 0 auto; 
+	border-bottom: 1px soild $leaf;
+
 }
