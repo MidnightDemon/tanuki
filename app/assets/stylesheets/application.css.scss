@@ -1,0 +1,109 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+*/
+
+$charcoal: #333;
+$leaf: #C0CE80;
+$grass: #2A6629;
+$olive: #1A3F1A;
+
+* {
+	font-family: Impact, Charcoal, sans-serif;
+}
+
+h1 {
+	margin-top:0px;
+}
+
+h2 {
+	margin-top:0px;
+	margin-bottom: 15px;
+}
+
+h3 {
+	margin-top:0px;
+	margin-bottom: 15px;
+}
+
+h4 {
+	margin-top:0px;
+	margin-bottom: 15px;
+}
+
+body {
+	width: 900px;
+	margin: 0 auto; 
+}
+
+#user_nav {
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+.indent {
+	padding-left: 25px;
+}
+
+.indent-small {
+	padding-left: 15px;
+}
+
+.centered {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+.bubble {
+	border-radius: 5px;
+	color: $charcoal;
+	border: 1px solid $leaf;
+	padding: 10px;
+	margin: 10px 10px 0 0;
+
+	background: #feffe8; /* Old browsers */
+	background: -moz-linear-gradient(top, #feffe8 0%, #d6dbbf 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feffe8), color-stop(100%,#d6dbbf)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #feffe8 0%,#d6dbbf 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #feffe8 0%,#d6dbbf 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #feffe8 0%,#d6dbbf 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #feffe8 0%,#d6dbbf 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffe8', endColorstr='#d6dbbf',GradientType=0 ); /* IE6-9 */
+}
+
+a {
+	color: $olive;
+	text-decoration: none;
+}
+
+.button {
+	border-radius: 5px;
+	border: 1px solid $grass;
+	font-size: 12px;
+	padding: 5px;
+
+	background: #c9de96; /* Old browsers */
+	background: -moz-linear-gradient(top, #c9de96 0%, #8ab66b 44%, #398235 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c9de96), color-stop(44%,#8ab66b), color-stop(100%,#398235)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #c9de96 0%,#8ab66b 44%,#398235 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #c9de96 0%,#8ab66b 44%,#398235 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #c9de96 0%,#8ab66b 44%,#398235 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #c9de96 0%,#8ab66b 44%,#398235 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9de96', endColorstr='#398235',GradientType=0 ); /* IE6-9 */
+}
+
+#container{
+	margin-bottom: 30px;
+}
