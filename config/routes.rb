@@ -11,8 +11,14 @@ Blog::Application.routes.draw do
 
   # devise_for :users, :path_name => {:sign_in => "login", :sign_out => "logout"}
 
+
+
   resources :posts
-  resources :tasks
+  resources :tasks do 
+    member do
+      put :complete
+    end
+  end
   resources :calendar
   resources :calendar_entries
 

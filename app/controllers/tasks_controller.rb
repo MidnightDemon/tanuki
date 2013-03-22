@@ -26,6 +26,18 @@ class TasksController < ApplicationController
     end  	
   end
 
+  def complete
+    @task = Task.find(params[:id])
+
+    respond_to do |format|
+      if @task.update_attributes(:completed => true)
+        format.html { redirect_to calendar_index_path }
+      else
+        format.html { redirect_to calendar_index_path }
+      end
+    end    
+  end
+
   def create
     @task = Task.new(params[:task])
 
@@ -45,7 +57,7 @@ class TasksController < ApplicationController
     @task.destroy
 
     respond_to do |format|
-      format.html { redirect_to calendar_url }
+      format.html { redirect_to calendar_index_path }
       format.json { head :no_content }
     end
   end

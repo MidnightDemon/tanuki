@@ -63,7 +63,7 @@
             <% end %>
           </td>
           <td><%= content_tag(:p, task.description, :style => "display: inline;") %></td>
-          <td><%= image_tag "icons/x.png" %></td>
+          <td><%= link_to (image_tag "icons/x.png"), task_path(task) %></td>
         </tr>
       <% end %>
       <% if !@tasks_done.any? %>
@@ -83,8 +83,16 @@
             <% end %>
           </td>
           <td><%= content_tag(:p, task.description, :style => "display: inline;") %></td>
-          <td><%= link_to (image_tag "icons/check.png") %></td>
-          <td><%= link_to (image_tag "icons/x.png") %></td>
+          <td>
+            <%= form_for(task, :url => complete_task_path(task)) do |f| %>
+              <button type="submit">
+                <%= image_tag "icons/check.png" %>
+              </button>
+            <% end %>
+          </td>
+          <td>
+              <%= link_to (image_tag "icons/x.png"), task_path(task) %>
+          </td>
         </tr>
       <% end %>
     </div>    
