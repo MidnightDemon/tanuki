@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'execjs'
 gem 'rails', '3.2.1'
 gem 'devise'
 

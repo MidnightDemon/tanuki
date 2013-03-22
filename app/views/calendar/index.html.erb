@@ -56,15 +56,17 @@
 
     <div class="indent-small">
       <% @tasks_done.each do |task| %>
-        <tr>
-          <td>
-            <% if task.icon != nil %>
-              <%= image_tag task.icon %>
-            <% end %>
-          </td>
-          <td><%= content_tag(:p, task.description, :style => "display: inline;") %></td>
-          <td><%= link_to (image_tag "icons/x.png"), task_path(task) %></td>
-        </tr>
+        <table>
+          <tr>
+            <td>
+              <% if task.icon != nil %>
+                <%= image_tag task.icon %>
+              <% end %>
+            </td>
+            <td style="width:150px;"><%= content_tag(:p, task.description, :style => "display: inline;") %></td>
+            <td><%= link_to (image_tag "icons/x.png"), task_path(task) %></td>
+          </tr>
+        </table>
       <% end %>
       <% if !@tasks_done.any? %>
         <%= "Nothing done yet..." %>
@@ -76,24 +78,26 @@
     <b>Pending</b>
     <div class="indent-small">
       <% @tasks_pending.each do |task| %>
-        <tr>
-          <td>
-            <% if task.icon != nil %>
-              <%= image_tag task.icon %>
-            <% end %>
-          </td>
-          <td><%= content_tag(:p, task.description, :style => "display: inline;") %></td>
-          <td>
-            <%= form_for(task, :url => complete_task_path(task)) do |f| %>
-              <button type="submit">
-                <%= image_tag "icons/check.png" %>
-              </button>
-            <% end %>
-          </td>
-          <td>
-              <%= link_to (image_tag "icons/x.png"), task_path(task) %>
-          </td>
-        </tr>
+        <table>
+          <tr>
+            <td>
+              <% if task.icon != nil %>
+                <%= image_tag task.icon %>
+              <% end %>
+            </td>
+            <td style="width: 127px;"><%= content_tag(:p, task.description, :style => "display: inline;") %></td>
+            <td>
+              <%= form_for(task, :url => complete_task_path(task)) do |f| %>
+                <button type="submit" style="display: inline;">
+                  <%= image_tag "icons/check.png", :class => "clickable" %>
+                </button>
+              <% end %>
+            </td>
+            <td>
+                <%= link_to (image_tag "icons/x.png"), task_path(task) %>
+            </td>
+          </tr>
+        </table>
       <% end %>
     </div>    
 

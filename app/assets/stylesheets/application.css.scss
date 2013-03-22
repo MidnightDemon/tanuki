@@ -114,6 +114,15 @@ a {
 	text-decoration: none;
 }
 
+button {
+	border-radius: 0;
+	border: none;
+	font-size: 12px;
+	padding: 0;
+	background: none;
+	background-color: transparent;
+}
+
 .button {
 	border-radius: 5px;
 	border: 1px solid $grass;

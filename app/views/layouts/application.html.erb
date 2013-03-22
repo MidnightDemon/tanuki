@@ -2,9 +2,9 @@
 <html>
 <head>
 	<title>Tanuki</title>
-	<%= csrf_meta_tags %>
 	<%= javascript_include_tag "application" %>
 	<%= stylesheet_link_tag "application" %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
 		
@@ -32,5 +32,8 @@
 		</div>
 	</div>
 	
+	<script type="text/javascript">
+		$(document).ready(function() { alert('hello world'); });
+	</script>
 </body>
 </html>
