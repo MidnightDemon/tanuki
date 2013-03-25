@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'execjs'
-gem 'rails', '3.2.1'
+gem 'rails', '3.2.12'
 gem 'devise'
+gem "railties", "~> 3.2.12"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

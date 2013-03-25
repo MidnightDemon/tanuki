@@ -1,4 +1,5 @@
-<%=stylesheet_link_tag :calendar%> 
+<%= stylesheet_link_tag :calendar%> 
+<%= javascript_include_tag params[:controller] %>
 
 <div class="board">
   <div class="bubble" style="width: 640px; float: left;">
@@ -23,17 +24,12 @@
       		    </td>
             <% else %>
               <td>
-                <div id="<%= row-1 %>-<%= col %>" class="
+                <div class="
       		        <% if (col == @startDate.wday || row-1 > 0 || (col > @startDate.wday && row-1 == 0)) && ( (7-@startDate.wday) + (row-2)*7 + col < @startDate.end_of_month.day)%>
       		      
-                    <%= "wday clickable" %>
+                    wday clickable<% if (@currDate == Time.now.day) %> today<% end %>" id="<%= Time.now.strftime("%Y-%-m-") %><%= @currDate  %>">
 
-                    <% if (@currDate == Time.now.day) %>
-                      <%= " today" %>
-                    <% end %>
-
-                    ">
-        		        <%= @currDate %>
+                    <%= link_to @currDate, :year => Time.now.year, :month => Time.now.month, :day => @currDate, method: :show_date, :remote => true %>
         		        <% @currDate += 1 %>
                   <% else %>
                     ">
@@ -64,7 +60,8 @@
               <% end %>
             </td>
             <td style="width:150px;"><%= content_tag(:p, task.description, :style => "display: inline;") %></td>
-            <td><%= link_to (image_tag "icons/x.png"), task_path(task) %></td>
+            <td><%= link_to (image_tag "icons/x.png"), task, confirm: 'Are you sure?', method: :delete %>
+            </td>
           </tr>
         </table>
       <% end %>
@@ -94,7 +91,7 @@
               <% end %>
             </td>
             <td>
-                <%= link_to (image_tag "icons/x.png"), task_path(task) %>
+                <%= link_to (image_tag "icons/x.png"), task, confirm: 'Are you sure?', method: :delete %>
             </td>
           </tr>
         </table>
@@ -160,4 +157,20 @@
   <br />
 
   <%= link_to 'New Post', new_post_path, :class => "button" %>
+</div>
+
+<div id="backgroundPopup"></div>
+<div id="popupContact">
+  <div class="bubble" style="padding: 5px; height: 430px; width: 720px; overflow:hidden; position: relative; z-index: 100;">
+    <h1 id="popupTitle">
+      <!-- title here -->
+    </h1>
+
+    <h3>Food Entries</h3>
+    <table id="food-date" class="records">
+      
+    </table>
+    <br />
+    <%= link_to 'New Entry', new_calendar_entry_path, :class => "button" %>
+  </div>
 </div>

@@ -18,4 +18,18 @@ class CalendarController < ApplicationController
       format.json { render json: @tasks }
     end
   end
+
+  def show_date(params)
+    @time = Time.new(params[:year], params[:month],params[:day] , 0, 0)
+    @date_entries = CalendarEntry.where("start_date == ?", @time)
+    
+    # render :partial => "show_date"
+    # render "edit"
+
+    respond_to do |format|
+      format.js { render 'show_date' }
+      format.html # index.html.erb
+      # format.json { render json: @date_entries }
+    end
+  end
 end
