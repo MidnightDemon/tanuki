@@ -10,8 +10,12 @@ div.today a {
 	color: #E0561B;
 }
 
-table.records tr th.header {
-	width: 100px;
+table.records tr {
+	height: 30px;
+
+	th.header {
+		width: 100px;
+	}
 }
 
 .todo.bubble {

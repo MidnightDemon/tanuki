@@ -19,11 +19,7 @@ Blog::Application.routes.draw do
       put :complete
     end
   end
-  resources :calendar do
-    member do
-      put :show_date
-    end
-  end
+  resources :calendar
   resources :calendar_entries
 
   get "home/index"

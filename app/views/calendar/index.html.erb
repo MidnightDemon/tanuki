@@ -1,6 +1,19 @@
 <%= stylesheet_link_tag :calendar%> 
 <%= javascript_include_tag params[:controller] %>
 
+<div class="bubble">
+  <h1>Tanuki Status</h1>
+  <div class="indent-small">
+    <%= image_tag "icons/Tanuki.gif", :style => "float: left;" %>
+
+    <div style="padding-left: 60px;">
+      &nbsp;&nbsp;&nbsp;&nbsp;Tanukis are hungry creatures!  Feed him by making calendar entires recording the food you ate.  For each day you make at least one entry, Tanuki gets a carrot! He loves carrots.  He wants!  Let him have... <br /><br />
+      &nbsp;&nbsp;&nbsp;&nbsp;If you make four entries in a day, Tanuki is rewarded with an apple! He absolutely loves apples!  So, all the more reason to keep your entries up to date!  Don't let him go hungry.  That's tanuki abuse!
+      <br /><br />
+    </div>
+  </div>
+</div>
+
 <div class="board">
   <div class="bubble" style="width: 640px; float: left;">
     <h1>Calendar</h1>
@@ -24,17 +37,40 @@
       		    </td>
             <% else %>
               <td>
-                <div class="
       		        <% if (col == @startDate.wday || row-1 > 0 || (col > @startDate.wday && row-1 == 0)) && ( (7-@startDate.wday) + (row-2)*7 + col < @startDate.end_of_month.day)%>
       		      
-                    wday clickable<% if (@currDate == Time.now.day) %> today<% end %>" id="<%= Time.now.strftime("%Y-%-m-") %><%= @currDate  %>">
+                    <% if @currDate == Time.now.day %>
+                      <div class="wday clickable today"
+                    <% elsif @currDate <= Time.now.day %>
+                      <div class="wday clickable" 
+                    <% else %>
+                      <div class="wday" 
+                    <% end %>
 
-                    <%= link_to @currDate, :year => Time.now.year, :month => Time.now.month, :day => @currDate, method: :show_date, :remote => true %>
+                    id="<%= Time.now.strftime("%Y-%-m-") %><%= @currDate  %>">
+
+                    <% if @currDate <= Time.now.day %>
+                      <%= link_to @currDate, :year => Time.now.year, :month => Time.now.month, :day => @currDate, method: :show, :remote => true %>
+                    <% else %>
+                      <%= @currDate  %>
+                    <% end %>
+                    
+                    <br />
+
+                    <% if CalendarEntry.has_entry_for_date(Time.now.year, Time.now.month, @currDate) > 3 %>
+                      
+                      <%= image_tag("icons/apple.png", :class => "indent-small") %>
+                    <% elsif CalendarEntry.has_entry_for_date(Time.now.year, Time.now.month, @currDate) > 0 %>
+
+                      <%= image_tag("icons/Carrot.gif", :class => "indent-small") %>
+                    <% end %>
+
+                  </div>
+
         		        <% @currDate += 1 %>
                   <% else %>
-                    ">
+                    <div class=""></div>
                   <% end %>  
-      		      </div>
       		    </td>
             <% end %>
           <% end %>
@@ -46,7 +82,7 @@
     </div>
   </div>
 
-  <div class="todo bubble" style="width: 196px; height: 424px; max-height: 424px; margin-top: 0px; position: relative; top: 10px;">
+  <div class="todo bubble" style="width: 196px; height: 427px; max-height: 427px; margin-top: 0px; position: relative; top: 10px;">
     <h1>Tasks</h1>
     <b>Completed</b>
 

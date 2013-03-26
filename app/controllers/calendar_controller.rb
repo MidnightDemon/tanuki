@@ -11,6 +11,8 @@ class CalendarController < ApplicationController
     @tasks_done = Task.where(:completed => true);
     @tasks_pending = Task.where(:completed => false).first(5).reverse;
 
+    @all_entries = CalendarEntry.all.reverse
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @entries }
@@ -19,17 +21,18 @@ class CalendarController < ApplicationController
     end
   end
 
-  def show_date(params)
-    @time = Time.new(params[:year], params[:month],params[:day] , 0, 0)
-    @date_entries = CalendarEntry.where("start_date == ?", @time)
+  def show(params)
+    @time = Time.new(params[:year], params[:month],params[:day], 0, 0)
+    @date_entries = CalendarEntry.where("date == ?", @time)
     
     # render :partial => "show_date"
     # render "edit"
 
     respond_to do |format|
-      format.js { render 'show_date' }
+      format.js { render 'show' }
       format.html # index.html.erb
       # format.json { render json: @date_entries }
     end
   end
+
 end
