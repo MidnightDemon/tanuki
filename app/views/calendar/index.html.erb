@@ -2,13 +2,23 @@
 <%= javascript_include_tag params[:controller] %>
 
 <div class="bubble">
-  <h1>Tanuki Status</h1>
+  <h1>Welcome!</h1>
   <div class="indent-small">
     <%= image_tag "icons/Tanuki.gif", :style => "float: left;" %>
 
     <div style="padding-left: 60px;">
       &nbsp;&nbsp;&nbsp;&nbsp;Tanukis are hungry creatures!  Feed him by making calendar entires recording the food you ate.  For each day you make at least one entry, Tanuki gets a carrot! He loves carrots.  He wants!  Let him have... <br /><br />
       &nbsp;&nbsp;&nbsp;&nbsp;If you make four entries in a day, Tanuki is rewarded with an apple! He absolutely loves apples!  So, all the more reason to keep your entries up to date!  Don't let him go hungry.  That's tanuki abuse!
+      <br /><br />
+    </div>
+  </div>
+</div>
+
+<div class="bubble">
+  <h1>Tanuki Status</h1>
+  <div class="indent-small">
+    <div style="padding-left: 60px;">
+      &nbsp;&nbsp;&nbsp;&nbsp;Comming soon~
       <br /><br />
     </div>
   </div>
@@ -50,7 +60,7 @@
                     id="<%= Time.now.strftime("%Y-%-m-") %><%= @currDate  %>">
 
                     <% if @currDate <= Time.now.day %>
-                      <%= link_to @currDate, :year => Time.now.year, :month => Time.now.month, :day => @currDate, method: :show, :remote => true %>
+                      <%= link_to @currDate, show_date_calendar_index_path(:year => Time.now.year, :month => Time.now.month, :day => @currDate) %>
                     <% else %>
                       <%= @currDate  %>
                     <% end %>

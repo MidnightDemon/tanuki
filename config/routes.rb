@@ -19,7 +19,12 @@ Blog::Application.routes.draw do
       put :complete
     end
   end
-  resources :calendar
+  resources :calendar, :only => [:index] do 
+    collection do
+      get :show_date
+    end
+  end  
+
   resources :calendar_entries
 
   get "home/index"

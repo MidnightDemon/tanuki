@@ -117,3 +117,24 @@ div.board {
 	background-color: $smoke;
 	display: none;
 }
+
+.tanukiStatus {
+  width: 500px;
+  margin: auto;
+  height: 50px;
+
+  img {
+  	float: left;
+  }
+
+  h4 {
+  	padding-top: 15px;
+  	padding-left: 60px;
+  	width: 400px;
+
+  }
+}
+
+.earned {
+	float:right;
+}

@@ -7,11 +7,15 @@ class CalendarEntry < ActiveRecord::Base
   validates :food_time_id,  :presence => true
   validates :content, :presence => true
 
-  def self.has_entry_for_date(year, month, date)
+  def self.entries_for_date(year, month, date)
     time = Time.new(year, month, date)
 
     #"date > ? AND < ?", time.at_beginning_of_day, time.at_end_of_day
-    where("date > ? AND date < ?", time.yesterday.at_beginning_of_day, time.at_beginning_of_day).size
+    where("date > ? AND date < ?", time.yesterday.at_beginning_of_day, time.at_beginning_of_day)
+  end   
+
+  def self.has_entry_for_date(year, month, date)
+    entries_for_date(year, month, date).size
   end	
 end
 

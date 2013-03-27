@@ -21,17 +21,16 @@ class CalendarController < ApplicationController
     end
   end
 
-  def show(params)
-    @time = Time.new(params[:year], params[:month],params[:day], 0, 0)
-    @date_entries = CalendarEntry.where("date == ?", @time)
+  def show_date
+    @time = Time.new(params[:year], params[:month],params[:day])
+    @date_entries = CalendarEntry.where("date > ? AND date < ?", @time.yesterday.at_beginning_of_day, @time.at_beginning_of_day)
     
     # render :partial => "show_date"
     # render "edit"
 
     respond_to do |format|
-      format.js { render 'show' }
       format.html # index.html.erb
-      # format.json { render json: @date_entries }
+      format.json { render json: @date_entries }
     end
   end
 
