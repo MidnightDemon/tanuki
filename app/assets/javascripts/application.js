@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 
 
 var centerPopup, disablePopup, launchPopup, loadClickFunctions, loadPopup, popupStatus, stretchBackground;

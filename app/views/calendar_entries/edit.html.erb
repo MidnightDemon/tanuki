@@ -1,6 +1,10 @@
-<h1>Editing post</h1>
+<%= stylesheet_link_tag :calendar_entries%> 
 
-<%= render 'form' %>
+<div class="bubble">
+	<h1>Editing post</h1>
 
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+	<%= render 'form' %>
+
+	<%= link_to 'Show', @post %> |
+	<%= link_to 'Back', posts_path %>
+</div>

@@ -1,7 +1,7 @@
 Blog::Application.routes.draw do
   devise_for :users, :path => "", :path_names => { 
-    :sign_in => 'sign_in', 
-    :sign_out => 'sign_out', 
+    :sign_in => 'let_him_in', 
+    :sign_out => 'let_him_out', 
     :password => 'secret', 
     :confirmation => 'verification', 
     :unlock => 'unblock', 
@@ -22,12 +22,15 @@ Blog::Application.routes.draw do
   resources :calendar, :only => [:index] do 
     collection do
       get :show_date
+      #get :welcome
+      #get :display
     end
   end  
 
   resources :calendar_entries
 
   get "home/index"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

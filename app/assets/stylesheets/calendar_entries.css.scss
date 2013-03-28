@@ -1,3 +1,16 @@
 // Place all the styles related to the CalendarEntries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.bubble {
+	width:500px;
+	margin: auto;
+}
+
+.button.align {
+	margin-left: 2px;
+}
+
+textarea {
+  resize: none;
+}
