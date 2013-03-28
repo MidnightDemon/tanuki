@@ -11,8 +11,6 @@
  *= require_self
 */
 
-@import "jquery.ui.tabs.css.scss";
-
 $charcoal: #333;
 $leaf: #C0CE80;
 $grass: #2A6629;
@@ -145,7 +143,7 @@ button {
 #container{
 	padding-bottom: 30px;
 	padding-top: 30px;
-	width: 900px;
+	width: 910px;
 	margin: 0 auto; 
 }
 

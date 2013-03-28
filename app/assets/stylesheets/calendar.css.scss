@@ -26,6 +26,7 @@ table.records tr {
 
 .todo.bubble {
   position: relative;
+  margin-right: 0;
 	
 	a#new{
 	  position: absolute;
@@ -151,6 +152,7 @@ div.board {
 	border: 1px solid $leaf;
 	padding: 10px 0 10px 10px;
 	margin: 10px 0 0 0;
+	min-height: 350px;
 
 	background: #f9ffed; /* Old browsers */
 	background: -moz-linear-gradient(top, #f9ffed 1%, #e5f4d4 100%); /* FF3.6+ */

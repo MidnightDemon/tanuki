@@ -22,8 +22,8 @@ Blog::Application.routes.draw do
   resources :calendar, :only => [:index] do 
     collection do
       get :show_date
-      #get :welcome
-      #get :display
+      get :welcome
+      get :display
     end
   end  
 
