@@ -10,8 +10,13 @@
 		
 			<% if signed_in? %>
 				<div id="user_nav">
-					Signed in as <%= current_user.email %>.  Not you? 
+					Signed in as <%= current_user.email %> &nbsp;&nbsp;&nbsp;&nbsp;  Not you? 
 					<%= link_to "Logout", destroy_user_session_path, :class => "button" %>
+
+					<div style="display: inline; float: right">
+						<%= link_to "Dashboard", calendar_index_path, :class => "button" %>
+						<%= link_to "Account Settings", edit_user_registration_path, :class => "button" %>
+					</div>
 				</div>
 
 				<div id="container">
@@ -31,9 +36,5 @@
 			<% end %>
 		</div>
 	</div>
-	
-	<script type="text/javascript">
-		$(document).ready(function() { alert('hello world'); });
-	</script>
 </body>
 </html>

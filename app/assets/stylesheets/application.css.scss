@@ -11,6 +11,8 @@
  *= require_self
 */
 
+@import "jquery.ui.tabs.css.scss";
+
 $charcoal: #333;
 $leaf: #C0CE80;
 $grass: #2A6629;
@@ -54,7 +56,6 @@ body {
 	margin: 0;
 	background-image: url('leaf-pattern-back.jpg');
 	background-repeat: repeat;
-	/*background: #EEEEEE;*/
 }
 
 #user_nav {
@@ -64,6 +65,7 @@ body {
 	padding-right: 100px;
 	border-bottom: 1px solid $hemp;
 	box-shadow: 0px 5px 5px $shadow;
+	min-width: 760px;
 
 	background: #e4efc0; /* Old browsers */
 	background: -moz-linear-gradient(top, #e4efc0 0%, #e4efc0 0%, #e0eaaf 5%, #abbd73 100%); /* FF3.6+ */
@@ -128,6 +130,7 @@ button {
 	border: 1px solid $grass;
 	font-size: 12px;
 	padding: 5px;
+	display: inline-block;
 
 	background: #c9de96; /* Old browsers */
 	background: -moz-linear-gradient(top, #c9de96 0%, #8ab66b 44%, #398235 100%); /* FF3.6+ */
@@ -145,3 +148,4 @@ button {
 	width: 900px;
 	margin: 0 auto; 
 }
+

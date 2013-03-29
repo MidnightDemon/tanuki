@@ -1,9 +1,13 @@
-<p id="notice"><%= notice %></p>
+<%= stylesheet_link_tag :tasks%> 
 
-<p>
-  <b>Description:</b>
-  <%= @task.description%>
-</p>
+<div class="bubble">
+	<p id="notice"><%= notice %></p>
 
-<%# link_to 'Edit', edit_post_path(@post) %>
-<%= link_to 'Back', calendar_index_path %>
+	<p>
+	  <b>Description:</b>
+	  <%= @task.description%>
+	</p>
+
+	<%# link_to 'Edit', edit_post_path(@post) %>
+	<%= link_to 'Back', calendar_index_path %>
+</div>

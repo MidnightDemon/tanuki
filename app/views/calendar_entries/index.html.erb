@@ -1,27 +1,31 @@
-<h1>Listing posts</h1>
+<%= stylesheet_link_tag :calendar_entries%> 
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Title</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="bubble">
+  <h1>Listing posts</h1>
 
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= post.name %></td>
-    <td><%= post.title %></td>
-    <td><%= post.content %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Title</th>
+      <th>Content</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-<br />
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.name %></td>
+      <td><%= post.title %></td>
+      <td><%= post.content %></td>
+      <td><%= link_to 'Show', post %></td>
+      <td><%= link_to 'Edit', edit_post_path(post) %></td>
+      <td><%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></td>
+    </tr>
+  <% end %>
+  </table>
 
-<%= link_to 'New Post', new_post_path %>
+  <br />
+
+  <%= link_to 'New Post', new_post_path %>
+</div>

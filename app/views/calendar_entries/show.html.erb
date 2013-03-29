@@ -1,25 +1,29 @@
-<p id="notice"><%= notice %></p>
+<%= stylesheet_link_tag :calendar_entries%> 
 
-<p>
-  <b>Date:</b>
-  <%= @entry.date.to_date() %>
-</p>
+<div class="bubble">
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Time slot:</b>
-  <%= @entry.food_time.name %>
-</p>
+	<p>
+	  <b>Date:</b>
+	  <%= @entry.date %>
+	</p>
 
-<p>
-  <b>Content:</b>
-  <%= @entry.content %>
-</p>
+	<p>
+	  <b>Time slot:</b>
+	  <%= @entry.food_time.name %>
+	</p>
 
-<p>
-  <b>Updated at:</b>
-  <%= @entry.updated_at %>
-</p>
+	<p>
+	  <b>Content:</b>
+	  <%= @entry.content %>
+	</p>
+
+	<p>
+	  <b>Updated at:</b>
+	  <%= @entry.updated_at %>
+	</p>
 
 
-<%# link_to 'Edit', edit_post_path(@post) %>
-<%= link_to 'Back', calendar_index_path %>
+	<%# link_to 'Edit', edit_post_path(@post) %>
+	<%= link_to 'Back', calendar_index_path %>
+</div>
