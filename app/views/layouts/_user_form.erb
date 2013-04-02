@@ -1,0 +1,23 @@
+
+<%= javascript_include_tag params[:controller] %>
+
+<!--
+<div class="bubble" style="margin-top: 50px; display: block; margin-bottom: 20px;">
+	<h2>Welcome!</h2>
+
+	<div class="indent" style="padding-bottom: 20px;">
+		&nbsp;&nbsp;&nbsp;&nbsp;Begin your Tanuki Training by logging in below, or create an account if it's your first time here! 
+	</div>
+</div>
+-->
+				
+<div id="tabs" class="centered" style="white-space: nowrap; width: 332px;">
+  <ul>
+    <!--<li><%= link_to "Sign in", new_user_session_path %></li>-->
+    <!--<li><%= link_to "Register", new_user_registration_path %></li>-->
+    <li><%= link_to "Sign in", {:action => 'tabs'}, :remote => true %></li>
+  </ul>
+  <div id="tabs-1">
+
+  </div>
+</div>	
