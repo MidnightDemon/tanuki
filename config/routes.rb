@@ -27,6 +27,12 @@ Blog::Application.routes.draw do
     end
   end  
 
+  resources :home do
+    collection do
+      get 'tabs'
+    end 
+  end 
+
   resources :calendar_entries
 
   get "home/index"

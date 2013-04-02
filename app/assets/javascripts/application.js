@@ -3,6 +3,12 @@
 //= require jquery-ui
 
 
+$(document).ready(function(){
+  var $tabs = $("#tabs").tabs({ select: function(event, ui) { $(ui.panel).empty(); } });
+});
+
+/*
+
 var centerPopup, disablePopup, launchPopup, loadClickFunctions, loadPopup, popupStatus, stretchBackground;
 
 popupStatus = 0;
@@ -101,3 +107,5 @@ $(document).ready(function() {
 
 
 setTimeout(loadClickFunctions, 1250);
+
+*/

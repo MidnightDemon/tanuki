@@ -18,22 +18,16 @@
 						<%= link_to "Account Settings", edit_user_registration_path, :class => "button" %>
 					</div>
 				</div>
-
-				<div id="container">
-					<%= yield %>
-				</div>
-				
-			<% elsif request.path == new_user_session_path || request.path == new_user_registration_path%>
-
-				<div id="container">
-					<%= yield %>
-				</div>
-
-			<% else %>
-				<div id="user_nav">
-					<%= link_to "Sign in", new_user_session_path, :class => "button" %> or <%= link_to "Sign up", new_user_registration_path, :class => "button" %>
-				</div>
 			<% end %>
+				
+			<div id="container">
+				<% if !signed_in? && (request.path != new_user_session_path || request.path != new_user_registration_path) %>
+				
+					<%= render "layouts/user_form" %>
+				<% else %>
+					<%= yield %>
+				<% end %>
+			</div>
 		</div>
 	</div>
 </body>

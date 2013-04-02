@@ -1,9 +1,4 @@
 
-$(document).ready(function(){
-  var $tabs = $("#tabs").tabs({ select: function(event, ui) { $(ui.panel).empty(); } });
-});
-
-
 /*
 $(function() {
   $( "#tabs" ).tabs({
