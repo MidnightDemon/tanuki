@@ -8,7 +8,7 @@
 </head>
 <body>
 		
-			<% if signed_in? %>
+			<% if user_signed_in? %>
 				<div id="user_nav">
 					Signed in as <%= current_user.email %> &nbsp;&nbsp;&nbsp;&nbsp;  Not you? 
 					<%= link_to "Logout", destroy_user_session_path, :class => "button" %>
@@ -21,11 +21,11 @@
 			<% end %>
 				
 			<div id="container">
-				<% if !signed_in? && (request.path != new_user_session_path || request.path != new_user_registration_path) %>
-				
-					<%= render "layouts/user_form" %>
+				<% if user_signed_in? || (request.path == new_user_session_path || request.path == user_session_path || request.path == new_user_password_path ||
+					request.path == new_user_registration_path || request.path == user_session) %>
+				  <%= yield %>
 				<% else %>
-					<%= yield %>
+					<%= render :partial => "layouts/user_form" %>
 				<% end %>
 			</div>
 		</div>

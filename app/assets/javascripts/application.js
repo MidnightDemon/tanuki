@@ -4,7 +4,11 @@
 
 
 $(document).ready(function(){
-  var $tabs = $("#tabs").tabs({ select: function(event, ui) { $(ui.panel).empty(); } });
+  var $tabs = $("#tabs").tabs();
+});
+
+$("#tab1").click(function() {
+  alert("Handler for .click() called.");
 });
 
 /*
