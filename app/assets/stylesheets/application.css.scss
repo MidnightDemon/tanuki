@@ -148,13 +148,14 @@ button {
 	margin: 0 auto; 
 }
 
-.ui-tabs.ui-widget.ui-widget-content.ui-corner-all {
-	border-radius: 5px;
-	color: $charcoal;
-	border: 1px solid $leaf;
+.tab{
+	border-radius: 0 5px 5px 5px;
 	padding: 10px 0 10px 10px;
 	margin-top: 10px;
 	min-height: 330px;
+	border: 1px solid $leaf;
+	position: relative;
+	top: -6px;
 
 	background: #f9ffed; /* Old browsers */
 	background: -moz-linear-gradient(top, #f9ffed 1%, #e5f4d4 100%); /* FF3.6+ */
@@ -164,22 +165,37 @@ button {
 	background: -ms-linear-gradient(top, #f9ffed 1%,#e5f4d4 100%); /* IE10+ */
 	background: linear-gradient(to bottom, #f9ffed 1%,#e5f4d4 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9ffed', endColorstr='#e5f4d4',GradientType=0 ); /* IE6-9 */
+}
 
-	.centered {
-		margin-left: auto;
-		margin-right: auto;
+.centered {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	position: relative;	
+	z-index: 5;
+
+	li {
+		display: inline;
+		border-top: 1px solid $leaf;			
+		border-left: 1px solid $leaf;
+		border-right: 1px solid $leaf;		
+		padding: 5px 15px 5px 15px;
+		background-color: #f9ffed;
+		border-radius: 5px 5px 0 0;
 	}
 
-	ul {
-		list-style-type: none;
-		padding: 0;
-		margin: 0;
+	.notsel {
+		border-bottom: 1px solid $leaf;	
+	}		
 
-		li {
-			display: inline;
-			padding-left: 20px;
-			padding-right: 20px;
-		}
+	.sel {
+		border-bottom: 1px solid #f9ffed;		
 	}
 }
+
 

@@ -11,31 +11,22 @@
 </div>
 -->
 				
-<div id="tabs" class="centered" style="min-height: 200px; white-space: nowrap; width: 332px;">
+<div class="centered" style="width: 332px;">
   <ul>
     <!--<li><%= link_to "Sign in", new_user_session_path %></li>-->
     <!--<li><%= link_to "Register", new_user_registration_path %></li>-->
 
-    <li id="tab1" class="clickable">Sign in</li>
-    <li id="tab2" class="clickable">Register</li>
+    <li id="tab1" class="clickable sel">Sign in</li>
+    <li id="tab2" class="clickable notsel">Register</li>
   </ul>
-  <div id="tabs-1">
-    <%= render 'devise/sessions/new' %> 
-  </div>
+  <div class="tab" style="min-height: 150px; width: 332px;">
+    <div id="tabs-1">
+      <%= render 'devise/sessions/new' %> 
+    </div>
 
-  <div id="tabs-2" style="display: none;">
-    <%= render 'devise/registrations/new' %> 
-  </div>  
-</div>	
+    <div id="tabs-2" style="display: none;">
+      <%= render 'devise/registrations/new' %> 
+    </div>  
+  </div> 
+</div>  
 
-<script type="text/javascript">
-  $("#tab1").click(function() {
-    $("#tabs-1").show();
-    $("#tabs-2").hide();
-  });
-
-  $("#tab2").click(function() {
-    $("#tabs-1").hide();
-    $("#tabs-2").show();
-  });
-</script>

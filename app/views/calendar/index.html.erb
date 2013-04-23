@@ -1,11 +1,16 @@
 
-<div id="tabs">
-  <ul>
-    <li><%= link_to "Welcome", welcome_calendar_index_path %></li>
-    <li><%= link_to "Calendar", display_calendar_index_path %></li>
-  </ul>
-  <div id="tabs-1">
-  </div>
-</div>
 
-<%= javascript_include_tag params[:controller] %>
+<ul>
+  <li id="tab1" class="clickable sel">Welcome</li>
+  <li id="tab2" class="clickable notsel">Calendar</li>
+</ul>
+<div class="tab">
+  <div id="tabs-1">
+  	<%= render 'welcome' %>
+  </div>
+  <div id="tabs-2" style="display: none;">
+  	<%= render 'display' %>
+  </div>  
+ </div>
+
+

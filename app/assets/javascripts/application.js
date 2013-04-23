@@ -1,14 +1,20 @@
 //= require jquery
 //= require jquery_ujs
-//= require jquery-ui
 
+$(document).ready(function() {
+  $("#tab1").click(function() {
+    $("#tabs-1").show();
+    $("#tabs-2").hide();
+    $(this).removeClass('notsel').addClass('sel');
+    $("#tab2").removeClass('sel').addClass('notsel');
+  });
 
-$(document).ready(function(){
-  var $tabs = $("#tabs").tabs();
-});
-
-$("#tab1").click(function() {
-  alert("Handler for .click() called.");
+  $("#tab2").click(function() {
+    $("#tabs-1").hide();
+    $("#tabs-2").show();
+    $(this).removeClass('notsel').addClass('sel');
+    $("#tab1").removeClass('sel').addClass('notsel');  
+  });
 });
 
 /*
@@ -111,5 +117,4 @@ $(document).ready(function() {
 
 
 setTimeout(loadClickFunctions, 1250);
-
 */
