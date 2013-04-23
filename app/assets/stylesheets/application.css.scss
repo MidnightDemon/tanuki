@@ -19,9 +19,12 @@ $olive: #1A3F1A;
 
 $shadow: rgba(26,63,26,0.2);
 
+html { 
+	overflow-y: scroll;
+}
+
 * {
 	font-family: Tahoma, Geneva, sans-serif;
-
 }
 
 h1 {
