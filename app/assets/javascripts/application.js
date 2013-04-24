@@ -2,18 +2,20 @@
 //= require jquery_ujs
 
 $(document).ready(function() {
-  $("#tab1").click(function() {
-    $("#tabs-1").show();
-    $("#tabs-2").hide();
-    $(this).removeClass('notsel').addClass('sel');
-    $("#tab2").removeClass('sel').addClass('notsel');
-  });
+  $("ul#tab-list li").click(function() {
+    var source = this;
 
-  $("#tab2").click(function() {
-    $("#tabs-1").hide();
-    $("#tabs-2").show();
-    $(this).removeClass('notsel').addClass('sel');
-    $("#tab1").removeClass('sel').addClass('notsel');  
+    $( "ul#tab-list li" ).each(function (i) {
+      var tab = $("div.tab").children('div').get(i);
+
+      if ( this == source ) {
+        $(tab).show();
+        $(this).removeClass('notsel').addClass('sel');
+      } else {
+        $(tab).hide();
+        $(this).removeClass('sel').addClass('notsel');
+      }
+    });
   });
 });
 

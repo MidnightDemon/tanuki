@@ -4,6 +4,7 @@ gem 'execjs'
 gem 'rails', '3.2.12'
 gem 'devise'
 gem "railties", "~> 3.2.12"
+gem 'cancan'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

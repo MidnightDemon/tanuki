@@ -1,4 +1,6 @@
 Blog::Application.routes.draw do
+  get "profile/edit"
+
   devise_for :users, :path => "", :path_names => { 
     :sign_in => 'let_him_in', 
     :sign_out => 'let_him_out', 
@@ -19,11 +21,11 @@ Blog::Application.routes.draw do
       put :complete
     end
   end
-  resources :calendar, :only => [:index] do 
+  resources :dashboard, :only => [:index] do 
     collection do
       get :show_date
       get :welcome
-      get :display
+      get :calendar
     end
   end  
 
@@ -88,7 +90,7 @@ Blog::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   
-  root :to => 'home#index'
+  root :to => 'dashboard#index'
 
   # See how all your routes lay out with "rake routes"
 
