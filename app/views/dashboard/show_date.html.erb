@@ -1,0 +1,71 @@
+<%= stylesheet_link_tag :calendar%> 
+
+<div class="bubble" style="width:805px; margin: auto;">
+
+	<% if @date_entries.size >= 4 %>
+	  	<%= image_tag("icons/apple.png", :class => "earned") %>
+	  <% elsif @date_entries.size >= 1 %>
+	  	<%= image_tag("icons/Carrot.gif", :class => "earned") %>
+	  <% end %>
+  <h2>Food Entries for <%= @time.strftime("%A, %B %d %Y") %></h2>
+
+  <% if @date_entries.any? %>
+	  <table class="records">
+	    <tr>
+	      <th class="header" style="width:150px;">Time slot</th>
+	      <th class="header" style="width:500px;">Content</th>
+	      <th></th>
+	      <th></th>
+	      <th></th>
+	    </tr>
+
+	    <% @date_entries.each do |entry| %>
+	      <tr>
+	        <td><%= entry.food_time.name %></td>
+	        <td><%= entry.content %></td>
+	        <td><%= link_to 'Show', entry, :class => "button" %></td>
+	        <td><%= link_to 'Edit', edit_calendar_entry_path(entry), :class => "button" %></td>
+	        <td><%= link_to 'Destroy', entry, confirm: 'Are you sure?', method: :delete, :class => "button" %></td>
+	      </tr>
+	    <% end %>
+	  </table>
+
+	  <% if @date_entries.size >= 4 %>
+		  <br /><br />
+		  <div class="tanukiStatus">
+	  		<%= image_tag("icons/Tanuki-awesome.gif") %>
+	  		<h4>A happy Tanuki is one with an apple!  Fat Tanuki rolls about~</h4>
+	  	</div>
+	  <% elsif @date_entries.size == 3 %>
+	  	<br /><br />
+		  <div class="tanukiStatus">
+	  		<%= image_tag("icons/Tanuki-happy.gif") %>
+	  		<h4>He has lots and lots of food, but he wants more!</h4>
+	  	</div>
+	  <% elsif @date_entries.size == 2 %>
+		  <br /><br />
+		  <div class="tanukiStatus">
+		  	<%= image_tag("icons/Tanuki-face.gif") %>
+		  	<h4>Tanuki could eat - if you don't feed him, he'll strike!</h4>	  
+		  </div>	
+	  <% elsif @date_entries.size == 1 %>
+	    <br /><br />
+	  	<div class="tanukiStatus">
+	  		<%= image_tag("icons/Tanuki-unhappy.gif") %>
+	  		<h4>Poor tanuki... one meal is not enough!</h4>	  	
+	  	</div>
+	  <% end %>
+	<% else %>
+	  <br /><br />
+	  <div class="tanukiStatus">
+	  	<%= image_tag("icons/Tanuki-sad.gif") %>
+	  	<h4>No entires?  Oh noes!  Tanuki is sad!  He's hungry!</h4>
+		</div>
+	  <br /><br />
+	<% end %>
+
+  <br />
+  <%= link_to 'New Entry', new_calendar_entry_path, :class => "button" %><br /><br />
+  <%= link_to "Back", calendar_index_path, :class => "button" %>
+</div>
+
