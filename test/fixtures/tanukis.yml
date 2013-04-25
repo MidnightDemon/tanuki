@@ -2,10 +2,10 @@
 
 one:
   name: MyString
-  gender: 
-  owner: MyString
+  male: true
+  nature: MyString
 
 two:
   name: MyString
-  gender: 
-  owner: MyString
+  male: false
+  nature: MyString

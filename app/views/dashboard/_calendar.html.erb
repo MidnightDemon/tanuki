@@ -130,7 +130,7 @@
   <table class="records">
     <tr>
       <th class="header">Date</th>
-      <th class="header">Time slot</th>
+      <th class="header" style="width:200px;">Time slot</th>
       <th class="header" style="width:600px;">Content</th>
       <th></th>
       <th></th>
@@ -141,7 +141,7 @@
     <% @entries.each do |entry| %>
       <tr>
         <td><%= entry.date.to_date() %></td>
-        <td><%= entry.food_time.name %></td>
+        <td><%= entry.get_slot_name() %></td>
         <td><%= entry.content %></td>
         <td><%= link_to 'Show', entry, :class => "button" %></td>
         <td><%= link_to 'Edit', edit_calendar_entry_path(entry), :class => "button" %></td>

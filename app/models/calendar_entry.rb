@@ -1,11 +1,22 @@
 class CalendarEntry < ActiveRecord::Base
-  attr_accessible :date, :slot, :content, :food_time_id
-  
-  belongs_to :food_time
+  attr_accessible :date, :content, :slot
   
   validates :date, :presence => true
-  validates :food_time_id,  :presence => true
+  validates :slot,  :presence => true
   validates :content, :presence => true
+
+  TIME_SLOTS = ["Pre-breakfast snack", 
+      "Breakfast", 
+      "Pre-lunch snack", 
+      "Lunch", 
+      "Pre-dinner snack", 
+      "Dinner", 
+      "Dessert", 
+      "Bed-time snack"]  
+
+  def get_slot_name
+    TIME_SLOTS[slot]
+  end   
 
   def self.entries_for_date(year, month, date)
     time = Time.new(year, month, date)
