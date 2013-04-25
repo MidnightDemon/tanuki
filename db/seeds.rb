@@ -21,25 +21,25 @@ names.each do |name|
 end
 
 FemaleName.delete_all
-open("f-names.txt") do |fnames|
+open(File.join(File.dirname(__FILE__), "f-names.txt")) do |fnames|
   fnames.read.each_line do |name|
-    name, description = country.chomp.split(",", 2)
+    name, description = name.chomp.split(",", 2)
     description.chop!.slice!(0)
     FemaleName.create!(:name => name)
   end
 end
 
 MaleName.delete_all
-open("m-names.txt") do |mnames|
+open(File.join(File.dirname(__FILE__), "m-names.txt")) do |mnames|
   mnames.read.each_line do |name|
-    name, description = country.chomp.split(",", 2)
+    name, description = name.chomp.split(",", 2)
     description.chop!.slice!(0)
     MaleName.create!(:name => name)
   end
 end
 
 Nature.delete_all
-open("natures.txt") do |natures|
+open(File.join(File.dirname(__FILE__), "natures.txt")) do |natures|
   natures.read.each_line do |nature|
     nature.chomp!
     Nature.create!(:description => nature)

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130423203509) do
+ActiveRecord::Schema.define(:version => 20130424230608) do
 
   create_table "calendar_entries", :force => true do |t|
     t.datetime "date",         :limit => 255
@@ -21,10 +21,30 @@ ActiveRecord::Schema.define(:version => 20130423203509) do
     t.integer  "food_time_id"
   end
 
+  create_table "female_names", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "description"
+  end
+
   create_table "food_times", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "male_names", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "description"
+  end
+
+  create_table "natures", :force => true do |t|
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "posts", :force => true do |t|
@@ -33,6 +53,14 @@ ActiveRecord::Schema.define(:version => 20130423203509) do
     t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "tanukis", :force => true do |t|
+    t.boolean  "male"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "nature_id"
+    t.integer  "name_id"
   end
 
   create_table "tasks", :force => true do |t|

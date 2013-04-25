@@ -13,14 +13,13 @@ Blog::Application.routes.draw do
 
   # devise_for :users, :path_name => {:sign_in => "login", :sign_out => "logout"}
 
-
-
   resources :posts
   resources :tasks do 
     member do
       put :complete
     end
   end
+
   resources :dashboard, :only => [:index] do 
     collection do
       get :show_date
@@ -34,6 +33,13 @@ Blog::Application.routes.draw do
       get 'tabs'
     end 
   end 
+
+  resources :profile do 
+    member do
+      put :new
+      put :index
+    end
+  end  
 
   resources :calendar_entries
 

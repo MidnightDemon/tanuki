@@ -2,7 +2,7 @@ class CreateTanukis < ActiveRecord::Migration
   def up
     create_table :tanukis do |t|
       t.string :name
-      t.bool :male
+      t.boolean :male
 
       t.timestamps
     end

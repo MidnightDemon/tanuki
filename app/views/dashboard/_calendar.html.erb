@@ -37,7 +37,7 @@
                     id="<%= Time.now.strftime("%Y-%-m-") %><%= @currDate  %>">
 
                     <% if @currDate <= Time.now.day %>
-                      <%= link_to @currDate, show_date_calendar_index_path(:year => Time.now.year, :month => Time.now.month, :day => @currDate) %>
+                      <%= link_to @currDate, show_date_dashboard_index_path(:year => Time.now.year, :month => Time.now.month, :day => @currDate) %>
                     <% else %>
                       <%= @currDate  %>
                     <% end %>
@@ -137,6 +137,7 @@
       <th></th>
     </tr>
 
+
     <% @entries.each do |entry| %>
       <tr>
         <td><%= entry.date.to_date() %></td>
@@ -147,11 +148,10 @@
         <td><%= link_to 'Destroy', entry, confirm: 'Are you sure?', method: :delete, :class => "button" %></td>
       </tr>
     <% end %>
+
   </table>
   <br />
   <%= link_to 'New Entry', new_calendar_entry_path, :class => "button" %>
-
-
 </div>
 
 <div id="backgroundPopup"></div>

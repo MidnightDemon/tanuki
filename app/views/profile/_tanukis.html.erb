@@ -1,13 +1,34 @@
 <div class="bubble">
   <h1>Tanukis Currently Housing</h1>
   <div class="indent-small">
-    
+    <div style="padding-left: 60px;">
+      <% if @tanukis.any? %>
+        <% @tanukis.each do |tanuki| %>
+          <div>
+            <%= image_tag "icons/Tanuki.gif", :id => "gen-tanuki", :style => "float: left;" %>
+            <table>
+              <tr>
+                <td><%= entry.date.to_date() %></td>
+                <td><%= entry.food_time.name %></td>
+                <td><%= entry.content %></td>
+                <td><%= link_to 'Show', entry, :class => "button" %></td>
+                <td><%= link_to 'Edit', edit_calendar_entry_path(entry), :class => "button" %></td>
+                <td><%= link_to 'Destroy', entry, confirm: 'Are you sure?', method: :delete, :class => "button" %></td>
+              </tr>
+            </table>
+          </div>
+        <% end %>
+      <% else %>
+        <%= "You haven't adoped a tanuki!  See below to adopt one." %>
+      <% end %>
+    </div>
   </div>
 </div>
 
 <div class="bubble">
   <h1>Adopt-a-Tanuki</h1>
   <div class="indent-small">
+
     <%= image_tag "icons/Tanuki.gif", :id => "gen-tanuki", :style => "float: left;" %>
 
     <div style="padding-left: 60px;">
