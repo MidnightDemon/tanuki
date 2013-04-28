@@ -1,5 +1,5 @@
 <div class="bubble">
-  <h1>Tanukis Currently Housing</h1>
+  <h2>Tanukis Currently Housing</h2>
   <div class="indent-small">
     <div style="padding-left: 60px;">
       <% if @tanukis.any? %>
@@ -8,12 +8,9 @@
             <%= image_tag "icons/Tanuki.gif", :id => "gen-tanuki", :style => "float: left;" %>
             <table>
               <tr>
-                <td><%= entry.date.to_date() %></td>
-                <td><%= entry.food_time.name %></td>
-                <td><%= entry.content %></td>
-                <td><%= link_to 'Show', entry, :class => "button" %></td>
-                <td><%= link_to 'Edit', edit_calendar_entry_path(entry), :class => "button" %></td>
-                <td><%= link_to 'Destroy', entry, confirm: 'Are you sure?', method: :delete, :class => "button" %></td>
+                <td><%= tanuki.get_name %></td>
+                <td><%= tanuki.get_name_meaning %></td>
+                <td><%= tanuki.get_nature %></td>
               </tr>
             </table>
           </div>
@@ -26,15 +23,32 @@
 </div>
 
 <div class="bubble">
-  <h1>Adopt-a-Tanuki</h1>
+  <h2>Adopt-a-Tanuki</h2>
   <div class="indent-small">
+    <table>
+      <tr>
+        <% @gentanukis.each do |tanuki| %>
+          <td style="width: 300px;">
+            <%= image_tag "icons/Tanuki.gif", :id => "gen-tanuki", :style => "float: left;" %>
 
-    <%= image_tag "icons/Tanuki.gif", :id => "gen-tanuki", :style => "float: left;" %>
+            <div style="padding-left: 60px;">
+              <%= tanuki.get_name %>
+              <% if tanuki.is_male %>
+                <%= image_tag "boy.png"%>
+              <% else %>
+                <%= image_tag "girl.png"%>
+              <% end %>
+              <div style="font-size: 8px; display: inline;">(<%= tanuki.get_name_meaning %>)</div><br />
+              <div style="font-size: 10px; margin-bottom: 10px;"><%= tanuki.get_nature %></div>
 
-    <div style="padding-left: 60px;">
-      &nbsp;&nbsp;&nbsp;&nbsp;Tanukis are hungry creatures!  Feed him by making calendar entires recording the food you ate.  For each day you make at least one entry, Tanuki gets a carrot! He loves carrots.  He wants!  Let him have... <br /><br />
-      &nbsp;&nbsp;&nbsp;&nbsp;If you make four entries in a day, Tanuki is rewarded with an apple! He absolutely loves apples!  So, all the more reason to keep your entries up to date!  Don't let him go hungry.  That's tanuki abuse!
-      <br /><br />
-    </div>
+              <%= link_to "Adopt", profile_index_path, :class => "button" %>
+            </div>
+            <br />
+
+
+          </td>
+        <% end %>
+      </tr>
+    </table>
   </div>
 </div>
