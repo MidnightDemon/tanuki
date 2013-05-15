@@ -15,8 +15,8 @@
             </table>
           </div>
         <% end %>
-      <% else %>
-        <%= "You haven't adoped a tanuki!  See below to adopt one." %>
+      <% elsif current_user.tanukis.count < current_user.tanuki_limit %>
+        <%= "You have a vacant habitat! See below to adopt a tanuki." %>
       <% end %>
     </div>
   </div>
