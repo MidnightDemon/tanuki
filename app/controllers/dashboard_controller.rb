@@ -24,7 +24,7 @@ class DashboardController < ApplicationController
 
   def show_date
     @time = Time.new(params[:year], params[:month],params[:day])
-    @date_entries = current_user.calendar_entries.where("date > ? AND date < ?", @time.yesterday.at_beginning_of_day, @time.at_beginning_of_day)
+    @date_entries = current_user.calendar_entries.where("date = ?", time.at_beginning_of_day)
     
     # render :partial => "show_date"
     # render "edit"
