@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
     time = Time.new(year, month, date)
 
     #"date > ? AND < ?", time.at_beginning_of_day, time.at_end_of_day
-    self.calendar_entries.where("date == ?", time.at_beginning_of_day)
+    self.calendar_entries.where("date = ?", time.at_beginning_of_day)
   end   
 
   def has_entry_for_date(year, month, date)
