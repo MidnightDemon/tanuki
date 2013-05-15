@@ -170,6 +170,11 @@ button {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9ffed', endColorstr='#e5f4d4',GradientType=0 ); /* IE6-9 */
 }
 
+#tab-list {
+	position: relative;
+	top: 0px;
+}
+
 .centered {
 	margin-left: auto;
 	margin-right: auto;
@@ -181,7 +186,6 @@ ul {
 	margin: 0;
 	position: relative;	
 	z-index: 5;
-	top: -1px;
 
 	li {
 		display: inline;

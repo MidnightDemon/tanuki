@@ -19,7 +19,6 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
-    @task.user_id = current_user
 
     respond_to do |format|
       format.html # new.html.erb
@@ -32,16 +31,16 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.update_attributes(:completed => true)
-        format.html { redirect_to calendar_index_path }
+        format.html { redirect_to dashboard_index_path }
       else
-        format.html { redirect_to calendar_index_path }
+        format.html { redirect_to dashboard_index_path }
       end
     end    
   end
 
   def create
     @task = Task.new(params[:task])
-    @task.id = current_user
+    @task.user_id = current_user.id
 
     respond_to do |format|
       if @task.save
@@ -59,7 +58,7 @@ class TasksController < ApplicationController
     @task.destroy
 
     respond_to do |format|
-      format.html { redirect_to calendar_index_path }
+      format.html { redirect_to dashboard_index_path }
       format.json { head :no_content }
     end
   end

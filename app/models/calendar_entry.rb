@@ -20,16 +20,5 @@ class CalendarEntry < ActiveRecord::Base
   def get_slot_name
     TIME_SLOTS[slot]
   end   
-
-  def self.entries_for_date(year, month, date)
-    time = Time.new(year, month, date)
-
-    #"date > ? AND < ?", time.at_beginning_of_day, time.at_end_of_day
-    where("date > ? AND date < ?", time.yesterday.at_beginning_of_day, time.at_beginning_of_day)
-  end   
-
-  def self.has_entry_for_date(year, month, date)
-    entries_for_date(year, month, date).size
-  end	
 end
 

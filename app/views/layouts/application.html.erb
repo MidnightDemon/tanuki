@@ -8,27 +8,26 @@
 </head>
 <body>
 		
-			<% if user_signed_in? %>
-				<div id="user_nav">
-					Signed in as <%= current_user.email %> &nbsp;&nbsp;&nbsp;&nbsp;  Not you? 
-					<%= link_to "Logout", destroy_user_session_path, :class => "button" %>
+	<% if user_signed_in? %>
+		<div id="user_nav">
+			Signed in as <%= current_user.email %> &nbsp;&nbsp;&nbsp;&nbsp;  Not you? 
+			<%= link_to "Logout", destroy_user_session_path, :class => "button" %>
 
-					<div style="display: inline; float: right">
-						<%= link_to "Dashboard", dashboard_index_path, :class => "button" %>
-						<%= link_to "Profile", profile_index_path, :class => "button" %>
-					</div>
-				</div>
-			<% end %>
-				
-			<div id="container">
-				<% if user_signed_in? || (request.path == new_user_session_path || request.path == user_session_path || request.path == new_user_password_path ||
-					request.path == new_user_registration_path || request.path == user_session) %>
-				  <%= yield %>
-				<% else %>
-					<%= render :partial => "layouts/user_form" %>
-				<% end %>
+			<div style="display: inline; float: right">
+				<%= link_to "Dashboard", dashboard_index_path, :class => "button" %>
+				<%= link_to "Profile", profile_index_path, :class => "button" %>
 			</div>
 		</div>
+	<% end %>
+		
+	<div id="container">
+		<% if user_signed_in? || request.path == new_user_session_path || request.path == user_session_path || request.path == new_user_password_path ||
+			request.path == new_user_registration_path || request.path == user_session %>
+		  <%= yield %>
+		<% else %>
+			<%= render :partial => "layouts/user_form" %>
+		<% end %>
 	</div>
+
 </body>
 </html>

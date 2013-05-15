@@ -16,38 +16,44 @@
 
 <div class="bubble">
   <h2>Tanuki Status</h2>
-  <div class="indent-small">
-    <div style="padding-left: 60px;">
-      &nbsp;&nbsp;&nbsp;&nbsp;Comming soon~
-      <br /><br />
-    </div>
+
+  <div style="padding-left: 50px;">
+    Comming soon~
+    <br /><br />
   </div>
 </div>
 
 <div class="bubble">
   <h2>Latest Posts</h2>
-  <table class="records">
-    <tr>
-      <th class="header">Name</th>
-      <th class="header">Title</th>
-      <th class="header">Content</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
 
-  <% @posts.each do |post| %>
-    <tr>
-      <td><%= post.name %></td>
-      <td><%= post.title %></td>
-      <td><%= post.content %></td>
-      <td><%= link_to 'Show', post, :class => "button" %></td>
-      <td><%= link_to 'Edit', edit_post_path(post), :class => "button" %></td>
-      <td><%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete, :class => "button" %></td>
-    </tr>
+  <% if @posts.any? %>
+    <table class="records">
+      <tr>
+        <th class="header">Name</th>
+        <th class="header">Title</th>
+        <th class="header">Content</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.name %></td>
+        <td><%= post.title %></td>
+        <td><%= post.content %></td>
+        <td><%= link_to 'Show', post, :class => "button" %></td>
+        <td><%= link_to 'Edit', edit_post_path(post), :class => "button" %></td>
+        <td><%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete, :class => "button" %></td>
+      </tr>
+    <% end %>
+      
+    </table>
+  <% else %>
+    <div style="padding-left: 50px;">
+      No posts to display.  Create one! <br />
+    </div>
   <% end %>
-    
-  </table>
 
   <br />
 
