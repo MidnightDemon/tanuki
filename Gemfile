@@ -10,7 +10,7 @@ gem 'cancan'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3', group: [:development, :test]
-gem 'pg', group: [:production]
+#gem 'pg', group: [:production]
 gem 'therubyracer'
 gem 'pry', :group => :development
 

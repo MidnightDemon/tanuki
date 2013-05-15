@@ -1,16 +1,20 @@
 class Tanuki < ActiveRecord::Base
-  attr_accessible :male, :name, :nature
+  attr_accessible :male, :name, :nature, :hue, :sepia, :brightness, :user_id
 
   belongs_to :user
 
   validates :name,  :presence => true
   validates :male, :presence => true  
   validates :nature, :presence => true 
+  validates :user_id, :presence => true 
+
+  validates :hue, :number, :inclusion => 0..360
+  validates :sepia, :number, :inclusion => 0..200  
+  validates :brightness, :number, :inclusion => 0..200 
 
 	MALE_NAMES = Array.new(1)
 	FEMALE_NAMES = Array.new(1)
 	NATURES = Array.new(1)
-
 
 	open(File.join(File.dirname(__FILE__), "m-names.txt")) do |mnames|
 	  mnames.read.each_line do |name, index|
@@ -33,6 +37,25 @@ class Tanuki < ActiveRecord::Base
 	    nature.chomp!
 	    NATURES << nature
 	  end
+	end
+
+	def generate_characteristics
+  	self.sepia = rand()*100
+  	self.brightness = (rand()*20) + 90
+  	self.hue = (rand()*30) - 15
+  	self.nature = rand(NATURES.count)
+
+  	rand1 = [true, false].sample
+  	rand2 = [true, false].sample
+  	rand3 = [true, false].sample
+
+  	if(rand1 && rand2 && rand3) 
+  		self.hue = rand(360) - 180
+  	elsif(rand1 && rand2)
+  		self.hue = rand(180) - 90
+  	else(rand1)
+  		self.hue = rand(90) - 45  
+  	end
 	end	
 
 	def self.get_random_male_name
@@ -43,9 +66,17 @@ class Tanuki < ActiveRecord::Base
 		rand(FEMALE_NAMES.count)
 	end	
 
-	def self.get_random_nature
-		rand(NATURES.count)
+	def get_hue
+		self.hue.to_s
 	end	
+
+	def get_brightness
+		self.brightness.to_s
+	end
+
+	def get_sepia
+		self.sepia.to_s
+	end
 
 	def get_name
 		if(self.male == true)

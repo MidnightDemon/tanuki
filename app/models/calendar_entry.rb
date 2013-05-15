@@ -4,6 +4,9 @@ class CalendarEntry < ActiveRecord::Base
   validates :date, :presence => true
   validates :slot,  :presence => true
   validates :content, :presence => true
+  validates :user_id, :presence => true
+
+  belongs_to :user
 
   TIME_SLOTS = ["Pre-breakfast snack", 
       "Breakfast", 

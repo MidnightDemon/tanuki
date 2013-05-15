@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = current_user.posts.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,6 +25,7 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @post = Post.new
+    @post.user_id = current_user
 
     respond_to do |format|
       format.html # new.html.erb

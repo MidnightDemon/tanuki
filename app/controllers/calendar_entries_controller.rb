@@ -2,8 +2,7 @@ class CalendarEntriesController < ApplicationController
   # GET /calendar_entries
   # GET /calendar_entries.json
   def index
-    @entries = CalendarEntry.all
-	#@entries.each do |entry|
+    @entries = current_user.calendar_entries.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +13,7 @@ class CalendarEntriesController < ApplicationController
   # GET /calendar_entries/1
   # GET /calendar_entries/1.json
   def show
-    @entry = CalendarEntry.find(params[:id])
+    @entry = current_user.calendar_entries.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -42,6 +41,7 @@ class CalendarEntriesController < ApplicationController
   # POST /calendar_entries.json    
   def create
     @entry = CalendarEntry.new(params[:calendar_entry])
+    @entry.user = current_user
 
     respond_to do |format|
       if @entry.save

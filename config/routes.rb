@@ -41,6 +41,8 @@ Blog::Application.routes.draw do
     end
   end  
 
+  resources :profile, :controller => "profile_controller", :path_names => { :create => "adopt" }
+
   resources :calendar_entries
 
   get "home/index"

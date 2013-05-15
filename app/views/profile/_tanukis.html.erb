@@ -1,5 +1,5 @@
 <div class="bubble">
-  <h2>Tanukis Currently Housing</h2>
+  <h2>Tanuki Habitats</h2>
   <div class="indent-small">
     <div style="padding-left: 60px;">
       <% if @tanukis.any? %>
@@ -27,9 +27,9 @@
   <div class="indent-small">
     <table>
       <tr>
-        <% @gentanukis.each do |tanuki| %>
+        <% @gentanukis.each_with_index do |tanuki, index| %>
           <td style="width: 300px;">
-            <%= image_tag "icons/Tanuki.gif", :id => "gen-tanuki", :style => "float: left;" %>
+            <%= image_tag "icons/Tanuki.gif", :class => "gen-tanuki", :style => "-webkit-filter: hue-rotate(" + tanuki.get_hue + "deg) sepia(" + tanuki.get_sepia + "%) brightness(" + tanuki.get_brightness + "%); float: left;" %>
 
             <div style="padding-left: 60px;">
               <%= tanuki.get_name %>
@@ -41,11 +41,10 @@
               <div style="font-size: 8px; display: inline;">(<%= tanuki.get_name_meaning %>)</div><br />
               <div style="font-size: 10px; margin-bottom: 10px;"><%= tanuki.get_nature %></div>
 
-              <%= link_to "Adopt", profile_index_path, :class => "button" %>
+              
+
             </div>
             <br />
-
-
           </td>
         <% end %>
       </tr>

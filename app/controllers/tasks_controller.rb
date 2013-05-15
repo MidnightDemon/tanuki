@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   def index
-    @tasks = Task.all
+    @tasks = current_user.tasks.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -19,6 +19,7 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
+    @task.user_id = current_user
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,6 +41,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(params[:task])
+    @task.id = current_user
 
     respond_to do |format|
       if @task.save
