@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label "Time slot" %><br />
-	<%= f.select :slot, options_for_select(CalendarEntry::TIME_SLOTS) %>
+	<%= f.select :slot, options_for_select(CalendarEntry.get_time_slots, :selected => @entry.slot) %>
   </div>
   <div class="field">
     <%= f.label :content %><br />

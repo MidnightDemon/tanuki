@@ -6,11 +6,11 @@ class DashboardController < ApplicationController
   
     # GET /calendarentries, /calendarentries.json, /posts, /posts.json, /tasks, /tasks.json
   
-    @entries = current_user.calendar_entries.first(5).reverse
-    @posts = Post.first(5).reverse
+    @entries = current_user.calendar_entries.last(5).reverse
+    @posts = Post.last(5).reverse
 
     @tasks_done = current_user.tasks.where(:completed => true);
-    @tasks_pending = current_user.tasks.where(:completed => false).first(5).reverse;
+    @tasks_pending = current_user.tasks.where(:completed => false).last(5).reverse;
 
     @all_entries = current_user.calendar_entries.reverse
 
@@ -24,7 +24,7 @@ class DashboardController < ApplicationController
 
   def show_date
     @time = Time.new(params[:year], params[:month],params[:day])
-    @date_entries = current_user.calendar_entries.where("date = ?", @time.at_beginning_of_day)
+    @date_entries = current_user.calendar_entries.where("date = ?", @time.at_beginning_of_day).order("slot ASC")
     
     # render :partial => "show_date"
     # render "edit"
