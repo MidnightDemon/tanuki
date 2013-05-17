@@ -20,8 +20,16 @@ class User < ActiveRecord::Base
     self.calendar_entries.where("date = ?", time.at_beginning_of_day)
   end   
 
-  def has_entry_for_date(year, month, date)
-    self.entries_for_date(year, month, date).size
+  def entry_count_for_date(year, month, date)
+    self.entries_for_date(year, month, date).length
   end 
+
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
 
 end

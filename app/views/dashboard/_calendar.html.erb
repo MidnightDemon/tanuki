@@ -44,10 +44,10 @@
                     
                     <br />
 
-                    <% if current_user.has_entry_for_date(Time.now.year, Time.now.month, @currDate) > 3 %>
+                    <% if current_user.entry_count_for_date(Time.now.year, Time.now.month, @currDate) > 3 %>
                       
                       <%= image_tag("icons/apple.png", :class => "indent-small") %>
-                    <% elsif current_user.has_entry_for_date(Time.now.year, Time.now.month, @currDate) > 0 %>
+                    <% elsif current_user.entry_count_for_date(Time.now.year, Time.now.month, @currDate) > 0 %>
 
                       <%= image_tag("icons/Carrot.gif", :class => "indent-small") %>
                     <% end %>

@@ -2,6 +2,10 @@
   <li class="clickable sel">Welcome</li>
   <li class="clickable notsel">Calendar</li>
   <li class="clickable notsel">Watching</li>
+  <% if current_user.admin? %>
+    <li class="clickable notsel">Admin Panel</li>
+  <% end %>
+</ul>
 </ul>
 
 <div class="tab">
@@ -14,6 +18,12 @@
   <div style="display: none;">
   	Comming soon
   </div>  
+
+  <% if current_user.admin? %>
+    <div style="display: none;">
+      <%= render 'admin' %>
+    </div>  
+  <% end %>
 </div>
 
 

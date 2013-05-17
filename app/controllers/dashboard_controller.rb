@@ -14,6 +14,9 @@ class DashboardController < ApplicationController
 
     @all_entries = current_user.calendar_entries.reverse
 
+    @users = User.all
+    @users_search_results = User.search(params[:search])
+
     respond_to do |format|
       format.html { render :layout => 'application' }
       format.json { render json: @entries }

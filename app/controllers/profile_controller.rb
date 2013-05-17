@@ -26,7 +26,7 @@ class ProfileController < ApplicationController
 
   def create
     if current_user.tanukis.count < current_user.tanuki_limit
-      @tanuki = @gentanukis[params[:tanuki_id]]
+      @tanuki = tanuki
       @tanuki.user_id = current_user.id
 
       respond_to do |format|
