@@ -1,0 +1,41 @@
+<%= stylesheet_link_tag :dashboard%> 
+<%= javascript_include_tag params[:controller] %>
+
+<div class="bubble">
+  <h1>Admin Panel</h1>
+  <div class="indent-small">
+
+
+
+  </div>
+</div>
+
+<div class="bubble">
+  <h2>Users</h2>
+
+  <% if @users.any? %>
+    <table class="records">
+      <tr>
+        <th class="header" style="width: 300px;">Name</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+
+        <% if user.admin? %>
+          <td class="admin">ADMIN</td>
+        <% end %>
+      </tr>
+    <% end %>
+      
+    </table>
+  <% else %>
+    <div style="padding-left: 50px;">
+      No posts to display.  Create one! <br />
+    </div>
+  <% end %>  
+</div>
