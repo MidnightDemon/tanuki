@@ -27,7 +27,7 @@
   <div class="indent-small">
     <table>
       <tr>
-        <% @gentanukis.each_with_index do |tanuki, index| %>
+        <% @gentanukis.each do |tanuki| %>
           <td style="width: 300px;">
             <%= image_tag "icons/Tanuki.gif", :class => "gen-tanuki", :style => "-webkit-filter: hue-rotate(" + tanuki.get_hue + "deg) sepia(" + tanuki.get_sepia + "%) brightness(" + tanuki.get_brightness + "%); float: left;" %>
 
@@ -40,8 +40,6 @@
               <% end %>
               <div style="font-size: 8px; display: inline;">(<%= tanuki.get_name_meaning %>)</div><br />
               <div style="font-size: 10px; margin-bottom: 10px;"><%= tanuki.get_nature %></div>
-
-              <!-- <td><%= link_to 'Create', tanuki, :class => "button" %></td> -->
 
             </div>
             <br />

@@ -8,9 +8,9 @@ class Tanuki < ActiveRecord::Base
   validates :nature, :presence => true 
   validates :user_id, :presence => true 
 
-  validates :hue, :number, :inclusion => 0..360
-  validates :sepia, :number, :inclusion => 0..200  
-  validates :brightness, :number, :inclusion => 0..200 
+  validates_inclusion_of :hue, :in => 0..360
+  validates_inclusion_of :sepia, :in => 0..360
+  validates_inclusion_of :brightness, :in => 0..360
 
 	MALE_NAMES = Array.new(1)
 	FEMALE_NAMES = Array.new(1)
@@ -100,5 +100,11 @@ class Tanuki < ActiveRecord::Base
 
 	def get_nature
 		NATURES[self.nature]
-	end		
+	end	
+
+	private
+  def is_under_limit
+    return true unless self.user.present?
+    self.user.tanukis.count < self.user.tanuki_limit || !self.new_record?
+  end		
 end

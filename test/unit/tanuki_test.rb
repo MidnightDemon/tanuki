@@ -12,6 +12,11 @@ class TanukiTest < ActiveSupport::TestCase
   	tanuki.name = 0
   	tanuki.male = true
   	tanuki.nature = 0
+    tanuki.user_id = 1
+    tanuki.hue = 0
+    tanuki.sepia = 0
+    tanuki.brightness = 0
+
   	assert tanuki.save, "Should now save with name, male, nature"
 	end  
 end
