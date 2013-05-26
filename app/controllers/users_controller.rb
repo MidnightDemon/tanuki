@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   # GET /posts/1.json
   def show
     @user = User.find(params[:id])
+    @calendar_entries = @user.calendar_entries.all(:order => "date DESC, slot ASC")
 
     respond_to do |format|
       format.html # show.html.erb

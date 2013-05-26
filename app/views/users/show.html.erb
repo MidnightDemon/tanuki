@@ -19,15 +19,15 @@
   <% if @user.calendar_entries.any? %>
 	  <table class="records">
 	    <tr>
-	      <th class="header">Date</th>
-	      <th class="header" style="width:200px;">Time slot</th>
-	      <th class="header" style="width:600px;">Content</th>
+	      <th class="header" style="width:140px;">Date</th>
+	      <th class="header" style="width:205px;">Time slot</th>
+	      <th class="header" style="width:400px;">Content</th>
 	      <th></th>
 	      <th></th>
 	      <th></th>
 	    </tr>
 
-	    <% @user.calendar_entries.each do |entry| %>
+	    <% @calendar_entries.each do |entry| %>
 	      <tr>
 	        <td><%= entry.date.to_date() %></td>
 	        <td><%= entry.get_slot_name() %></td>
