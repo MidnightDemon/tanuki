@@ -6,6 +6,7 @@ gem 'devise'
 gem "railties", "~> 3.2.12"
 gem 'cancan'
 gem 'heroku'
+#gem 'factorygirl'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -16,7 +17,7 @@ gem 'pry', :group => :development
 
 group :production do
   gem 'thin'
-  gem 'pg'
+   gem 'pg'
 end
 
 # Gems used only for assets and not required

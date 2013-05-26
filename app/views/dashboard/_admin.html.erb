@@ -1,0 +1,51 @@
+<%= stylesheet_link_tag :dashboard%> 
+<%= javascript_include_tag params[:controller] %>
+
+<div class="bubble">
+  <h1>Admin Panel</h1>
+  <div class="indent-small">
+
+    View user profiles and entries
+
+  </div>
+</div>
+
+<div class="bubble">
+  <h2>Users</h2>
+
+  <% if @users.any? %>
+    <table class="records">
+      <tr>
+        <th class="header" style="width: 300px;">Name</th>
+        <th style="width: 100px;"> </th>
+        <th style="width: 100px;">Entry Count</th>
+        <th style="width: 300px;">Member Since</th>
+        <th style="width: 100px;"> </th>
+      </tr>
+
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+
+        <% if user.admin? %>
+          <td><span class="admin">ADMIN</span></td>
+        <% else %>
+          <td></td>
+        <% end %>
+
+        <td style="text-align:center"><%= user.calendar_entries.count %></td>
+        <td style="text-align:center"><%= user.created_at %></td>
+        <td style="text-align:center">
+          <%= link_to 'Show', user, :class => "button" %>
+        </td> 
+ 
+      </tr>
+    <% end %>
+      
+    </table>
+  <% else %>
+    <div style="padding-left: 50px;">
+      No users to display.<br />
+    </div>
+  <% end %>  
+</div>
