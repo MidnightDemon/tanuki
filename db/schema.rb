@@ -11,20 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130320220754) do
+ActiveRecord::Schema.define(:version => 20130512230147) do
 
   create_table "calendar_entries", :force => true do |t|
-    t.datetime "date",         :limit => 255
+    t.datetime "date",       :limit => 255
     t.string   "content"
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
-    t.integer  "food_time_id"
-  end
-
-  create_table "food_times", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "slot"
+    t.integer  "user_id"
   end
 
   create_table "posts", :force => true do |t|
@@ -33,6 +28,19 @@ ActiveRecord::Schema.define(:version => 20130320220754) do
     t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+  end
+
+  create_table "tanukis", :force => true do |t|
+    t.boolean  "male"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "nature"
+    t.integer  "name"
+    t.integer  "hue",        :default => 0
+    t.integer  "sepia",      :default => 0
+    t.integer  "brightness", :default => 0
+    t.integer  "user_id"
   end
 
   create_table "tasks", :force => true do |t|
@@ -41,11 +49,12 @@ ActiveRecord::Schema.define(:version => 20130320220754) do
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
     t.boolean  "completed",   :default => false
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "email",                  :default => "",    :null => false
+    t.string   "encrypted_password",     :default => "",    :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -54,8 +63,10 @@ ActiveRecord::Schema.define(:version => 20130320220754) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+    t.boolean  "admin",                  :default => false
+    t.integer  "tanuki_limit",           :default => 1
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

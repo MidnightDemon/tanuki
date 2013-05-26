@@ -1,0 +1,53 @@
+<div class="bubble">
+  <h2>Tanuki Habitats</h2>
+  <div class="indent-small">
+    <div style="padding-left: 60px;">
+      <% if @tanukis.any? %>
+        <% @tanukis.each do |tanuki| %>
+          <div>
+            <%= image_tag "icons/Tanuki.gif", :id => "gen-tanuki", :style => "float: left;" %>
+            <table>
+              <tr>
+                <td><%= tanuki.get_name %></td>
+                <td><%= tanuki.get_name_meaning %></td>
+                <td><%= tanuki.get_nature %></td>
+              </tr>
+            </table>
+          </div>
+        <% end %>
+      <% elsif current_user.tanukis.count < current_user.tanuki_limit %>
+        <%= "You have a vacant habitat! See below to adopt a tanuki." %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="bubble">
+  <h2>Adopt-a-Tanuki</h2>
+  <div class="indent-small">
+    <table>
+      <tr>
+        <% @gentanukis.each_with_index do |tanuki, index| %>
+          <td style="width: 300px;">
+            <%= image_tag "icons/Tanuki.gif", :class => "gen-tanuki", :style => "-webkit-filter: hue-rotate(" + tanuki.get_hue + "deg) sepia(" + tanuki.get_sepia + "%) brightness(" + tanuki.get_brightness + "%); float: left;" %>
+
+            <div style="padding-left: 60px;">
+              <%= tanuki.get_name %>
+              <% if tanuki.is_male %>
+                <%= image_tag "boy.png"%>
+              <% else %>
+                <%= image_tag "girl.png"%>
+              <% end %>
+              <div style="font-size: 8px; display: inline;">(<%= tanuki.get_name_meaning %>)</div><br />
+              <div style="font-size: 10px; margin-bottom: 10px;"><%= tanuki.get_nature %></div>
+
+              
+
+            </div>
+            <br />
+          </td>
+        <% end %>
+      </tr>
+    </table>
+  </div>
+</div>

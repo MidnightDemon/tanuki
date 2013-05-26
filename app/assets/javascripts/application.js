@@ -1,7 +1,25 @@
 //= require jquery
 //= require jquery_ujs
-//= require jquery-ui
 
+$(document).ready(function() {
+  $("ul#tab-list li").click(function() {
+    var source = this;
+
+    $( "ul#tab-list li" ).each(function (i) {
+      var tab = $("div.tab").children('div').get(i);
+
+      if ( this == source ) {
+        $(tab).show();
+        $(this).removeClass('notsel').addClass('sel');
+      } else {
+        $(tab).hide();
+        $(this).removeClass('sel').addClass('notsel');
+      }
+    });
+  });
+});
+
+/*
 
 var centerPopup, disablePopup, launchPopup, loadClickFunctions, loadPopup, popupStatus, stretchBackground;
 
@@ -101,3 +119,4 @@ $(document).ready(function() {
 
 
 setTimeout(loadClickFunctions, 1250);
+*/

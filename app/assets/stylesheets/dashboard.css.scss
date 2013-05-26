@@ -26,6 +26,13 @@ table.records tr {
 
 .todo.bubble {
   position: relative;
+  margin-right: 0;
+	width: 194px; 
+	height: 427px; 
+	max-height: 427px; 
+	margin-top: 0px; 
+	position: relative; 
+	top: 10px;
 	
 	a#new{
 	  position: absolute;
@@ -145,31 +152,7 @@ div.board {
 	float:right;
 }
 
-.ui-tabs.ui-widget.ui-widget-content.ui-corner-all {
-	border-radius: 5px;
-	color: $charcoal;
-	border: 1px solid $leaf;
-	padding: 10px 0 10px 10px;
-	margin: 10px 0 0 0;
-
-	background: #f9ffed; /* Old browsers */
-	background: -moz-linear-gradient(top, #f9ffed 1%, #e5f4d4 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#f9ffed), color-stop(100%,#e5f4d4)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #f9ffed 1%,#e5f4d4 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #f9ffed 1%,#e5f4d4 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #f9ffed 1%,#e5f4d4 100%); /* IE10+ */
-	background: linear-gradient(to bottom, #f9ffed 1%,#e5f4d4 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9ffed', endColorstr='#e5f4d4',GradientType=0 ); /* IE6-9 */
-
-	ul {
-		list-style-type: none;
-		padding: 0;
-		margin: 0;
-
-		li {
-			display: inline;
-			padding-left: 20px;
-			padding-right: 20px;
-		}
-	}
+img#tanuki {
 }
+
+

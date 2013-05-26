@@ -3,9 +3,9 @@
 <div class="bubble" style="width:805px; margin: auto;">
 
 	<% if @date_entries.size >= 4 %>
-	  	<%= image_tag("icons/apple.png", :class => "earned") %>
+	  	<%= image_tag("icons/apple.png", :class => "earned", :style => "float:right;") %>
 	  <% elsif @date_entries.size >= 1 %>
-	  	<%= image_tag("icons/Carrot.gif", :class => "earned") %>
+	  	<%= image_tag("icons/Carrot.gif", :class => "earned", :style => "float:right;") %>
 	  <% end %>
   <h2>Food Entries for <%= @time.strftime("%A, %B %d %Y") %></h2>
 
@@ -21,7 +21,7 @@
 
 	    <% @date_entries.each do |entry| %>
 	      <tr>
-	        <td><%= entry.food_time.name %></td>
+	        <td><%= entry.get_slot_name %></td>
 	        <td><%= entry.content %></td>
 	        <td><%= link_to 'Show', entry, :class => "button" %></td>
 	        <td><%= link_to 'Edit', edit_calendar_entry_path(entry), :class => "button" %></td>
@@ -66,6 +66,6 @@
 
   <br />
   <%= link_to 'New Entry', new_calendar_entry_path, :class => "button" %><br /><br />
-  <%= link_to 'Back', calendar_index_path, :class => "button" %>
+  <%= link_to "Back", dashboard_index_path, :class => "button" %>
 </div>
 

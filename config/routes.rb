@@ -1,4 +1,6 @@
 Blog::Application.routes.draw do
+  get "profile/edit"
+
   devise_for :users, :path => "", :path_names => { 
     :sign_in => 'let_him_in', 
     :sign_out => 'let_him_out', 
@@ -11,21 +13,35 @@ Blog::Application.routes.draw do
 
   # devise_for :users, :path_name => {:sign_in => "login", :sign_out => "logout"}
 
-
-
   resources :posts
   resources :tasks do 
     member do
       put :complete
     end
   end
-  resources :calendar, :only => [:index] do 
+
+  resources :dashboard, :only => [:index] do 
     collection do
       get :show_date
-      #get :welcome
-      #get :display
+      get :welcome
+      get :calendar
     end
   end  
+
+  resources :home do
+    collection do
+      get 'tabs'
+    end 
+  end 
+
+  resources :profile do 
+    member do
+      put :new
+      put :index
+    end
+  end  
+
+  resources :profile, :controller => "profile_controller", :path_names => { :create => "adopt" }
 
   resources :calendar_entries
 

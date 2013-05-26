@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  slot: 1
   name: MyString
+  male: true
+  nature: MyString
 
 two:
-  slot: 1
   name: MyString
+  male: false
+  nature: MyString

@@ -5,17 +5,3 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
-FoodTime.delete_all
-names = ["Pre-breakfast snack", 
-		"Breakfast", 
-		"Pre-lunch snack", 
-		"Lunch", 
-		"Pre-dinner snack", 
-		"Dinner", 
-		"Dessert", 
-		"Bed-time snack"]
-
-names.each do |name| 
-	FoodTime.create!(:name => name)
-end

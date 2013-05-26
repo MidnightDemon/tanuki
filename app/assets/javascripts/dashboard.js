@@ -1,6 +1,25 @@
-$(document).ready(function(){
-  var $tabs = $("#tabs").tabs({ select: function(event, ui) { $(ui.panel).empty(); } });
-});
+
+$(document).ready(function() {
+  $("img#tanuki").click(function() {
+    var nuki = $("img#tanuki");
+    $(nuki).css("-webkit-filter", "hue-rotate(" + Math.floor(Math.random()*360) + "deg) sepia(" + Math.floor(Math.random()*100) +"%) brightness(" + (Math.floor(Math.random()*20) + 90) + "%)");
+  });  
+});  
+
+
+/*
+$(function() {
+  $( "#tabs" ).tabs({
+    beforeLoad: function( event, ui ) {
+      ui.jqXHR.error(function() {
+        ui.panel.html(
+          "Couldn't load this tab. We'll try to fix this as soon as possible. " +
+          "If this wouldn't be a demo." );
+      });
+    }
+  });
+})
+*/
 
 /*
 ###

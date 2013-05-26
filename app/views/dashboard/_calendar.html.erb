@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag :calendar%> 
+<%= stylesheet_link_tag :dashboard%> 
 <%= javascript_include_tag params[:controller] %>
 
 <div class="board">
@@ -37,17 +37,17 @@
                     id="<%= Time.now.strftime("%Y-%-m-") %><%= @currDate  %>">
 
                     <% if @currDate <= Time.now.day %>
-                      <%= link_to @currDate, show_date_calendar_index_path(:year => Time.now.year, :month => Time.now.month, :day => @currDate) %>
+                      <%= link_to @currDate, show_date_dashboard_index_path(:year => Time.now.year, :month => Time.now.month, :day => @currDate) %>
                     <% else %>
                       <%= @currDate  %>
                     <% end %>
                     
                     <br />
 
-                    <% if CalendarEntry.has_entry_for_date(Time.now.year, Time.now.month, @currDate) > 3 %>
+                    <% if current_user.has_entry_for_date(Time.now.year, Time.now.month, @currDate) > 3 %>
                       
                       <%= image_tag("icons/apple.png", :class => "indent-small") %>
-                    <% elsif CalendarEntry.has_entry_for_date(Time.now.year, Time.now.month, @currDate) > 0 %>
+                    <% elsif current_user.has_entry_for_date(Time.now.year, Time.now.month, @currDate) > 0 %>
 
                       <%= image_tag("icons/Carrot.gif", :class => "indent-small") %>
                     <% end %>
@@ -69,7 +69,7 @@
     </div>
   </div>
 
-  <div class="todo bubble" style="width: 196px; height: 427px; max-height: 427px; margin-top: 0px; position: relative; top: 10px;">
+  <div class="todo bubble">
     <h1>Tasks</h1>
     <b>Completed</b>
 
@@ -130,56 +130,28 @@
   <table class="records">
     <tr>
       <th class="header">Date</th>
-      <th class="header">Time slot</th>
+      <th class="header" style="width:200px;">Time slot</th>
       <th class="header" style="width:600px;">Content</th>
       <th></th>
       <th></th>
       <th></th>
     </tr>
 
+
     <% @entries.each do |entry| %>
       <tr>
         <td><%= entry.date.to_date() %></td>
-        <td><%= entry.food_time.name %></td>
+        <td><%= entry.get_slot_name() %></td>
         <td><%= entry.content %></td>
         <td><%= link_to 'Show', entry, :class => "button" %></td>
         <td><%= link_to 'Edit', edit_calendar_entry_path(entry), :class => "button" %></td>
         <td><%= link_to 'Destroy', entry, confirm: 'Are you sure?', method: :delete, :class => "button" %></td>
       </tr>
     <% end %>
+
   </table>
   <br />
   <%= link_to 'New Entry', new_calendar_entry_path, :class => "button" %>
-</div>
-
-<div class="bubble">
-  <h2>Newest Posts</h2>
-  <table class="records">
-    <tr>
-      <th class="header">Name</th>
-      <th class="header">Title</th>
-      <th class="header">Content</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-
-  <% @posts.each do |post| %>
-    <tr>
-      <td><%= post.name %></td>
-      <td><%= post.title %></td>
-      <td><%= post.content %></td>
-      <td><%= link_to 'Show', post, :class => "button" %></td>
-      <td><%= link_to 'Edit', edit_post_path(post), :class => "button" %></td>
-      <td><%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete, :class => "button" %></td>
-    </tr>
-  <% end %>
-    
-  </table>
-
-  <br />
-
-  <%= link_to 'New Post', new_post_path, :class => "button" %>
 </div>
 
 <div id="backgroundPopup"></div>

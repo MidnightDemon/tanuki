@@ -6,5 +6,22 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :tanuki
+
+  has_many :tanukis
+  has_many :posts
+  has_many :calendar_entries
+  has_many :tasks
+
+  def entries_for_date(year, month, date)
+    time = Time.new(year, month, date)
+
+    #"date > ? AND < ?", time.at_beginning_of_day, time.at_end_of_day
+    self.calendar_entries.where("date = ?", time.at_beginning_of_day)
+  end   
+
+  def has_entry_for_date(year, month, date)
+    self.entries_for_date(year, month, date).size
+  end 
+
 end

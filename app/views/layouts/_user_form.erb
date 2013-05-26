@@ -1,0 +1,32 @@
+
+
+
+<!--
+<div class="bubble" style="margin-top: 50px; display: block; margin-bottom: 20px;">
+	<h2>Welcome!</h2>
+
+	<div class="indent" style="padding-bottom: 20px;">
+		&nbsp;&nbsp;&nbsp;&nbsp;Begin your Tanuki Training by logging in below, or create an account if it's your first time here! 
+	</div>
+</div>
+-->
+				
+<div class="centered" style="width: 332px;">
+  <ul id="tab-list">
+    <!--<li><%= link_to "Sign in", new_user_session_path %></li>-->
+    <!--<li><%= link_to "Register", new_user_registration_path %></li>-->
+
+    <li id="tab1" class="clickable sel">Sign in</li>
+    <li id="tab2" class="clickable notsel">Register</li>
+  </ul>
+  <div class="tab" style="min-height: 150px; width: 332px;">
+    <div id="tabs-1">
+      <%= render 'devise/sessions/new' %> 
+    </div>
+
+    <div id="tabs-2" style="display: none;">
+      <%= render 'devise/registrations/new' %> 
+    </div>  
+  </div> 
+</div>  
+
