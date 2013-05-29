@@ -2,7 +2,7 @@ class DashboardController < ApplicationController
 
   def index  
     @currDate = 1
-    @startDate = Time.local(Time.now.year, Time.now.mon, 1)
+    @startDate = Time.local(Time.current.year, Time.current.mon, 1)
   
     # GET /calendarentries, /calendarentries.json, /posts, /posts.json, /tasks, /tasks.json
   

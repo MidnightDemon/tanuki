@@ -1,11 +1,11 @@
-<%= stylesheet_link_tag :dashboard%> 
+<%= stylesheet_link_tag :dashboard %> 
 <%= javascript_include_tag params[:controller] %>
 
 <div class="board">
   <div class="bubble" style="width: 640px; float: left;">
     <h1>Calendar</h1>
 
-    <h4>Today is <%= Time.now.strftime("%A, %B %d %Y") %></h4>
+    <h4>Today is <%= Time.current.strftime("%A, %B %d %Y") %></h4>
 
     <div class="calendar">
       <table cellpadding="0" cellspacing="1">
@@ -26,28 +26,28 @@
               <td>
       		        <% if (col == @startDate.wday || row-1 > 0 || (col > @startDate.wday && row-1 == 0)) && ( (7-@startDate.wday) + (row-2)*7 + col < @startDate.end_of_month.day)%>
       		      
-                    <% if @currDate == Time.now.day %>
+                    <% if @currDate == Time.current.day %>
                       <div class="wday clickable today"
-                    <% elsif @currDate <= Time.now.day %>
+                    <% elsif @currDate <= Time.current.day %>
                       <div class="wday clickable" 
                     <% else %>
                       <div class="wday" 
                     <% end %>
 
-                    id="<%= Time.now.strftime("%Y-%-m-") %><%= @currDate  %>">
+                    id="<%= Time.current.strftime("%Y-%-m-") %><%= @currDate  %>">
 
-                    <% if @currDate <= Time.now.day %>
-                      <%= link_to @currDate, show_date_dashboard_index_path(:year => Time.now.year, :month => Time.now.month, :day => @currDate) %>
+                    <% if @currDate <= Time.current.day %>
+                      <%= link_to @currDate, show_date_dashboard_index_path(:year => Time.current.year, :month => Time.current.month, :day => @currDate) %>
                     <% else %>
                       <%= @currDate  %>
                     <% end %>
                     
                     <br />
 
-                    <% if current_user.entry_count_for_date(Time.now.year, Time.now.month, @currDate) > 3 %>
+                    <% if current_user.entry_count_for_date(Time.current.year, Time.current.month, @currDate) > 3 %>
                       
                       <%= image_tag("icons/apple.png", :class => "indent-small") %>
-                    <% elsif current_user.entry_count_for_date(Time.now.year, Time.now.month, @currDate) > 0 %>
+                    <% elsif current_user.entry_count_for_date(Time.current.year, Time.current.month, @currDate) > 0 %>
 
                       <%= image_tag("icons/Carrot.gif", :class => "indent-small") %>
                     <% end %>
