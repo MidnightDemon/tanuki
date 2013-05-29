@@ -1,21 +1,21 @@
-<%= form_for "entries[]" do |f| %>
-  <% for @entry in @entries %>
+<%= form_for(@entry) do |f| %>
+  <% if @entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@entry.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-    <div class="field">
-      <%= f.label :date %><br />
-      <%= f.date_select :date %>
-    </div>
-
-    <div class="field">
-      <%= f.label "Time slot" %><br />
-      <%= @entry.slot %>
-    </div>
-    <div class="field">
-      <%= f.label :content %><br />
-      <%= f.text_area :content, :size => '80x1' %>
-    </div>
-    <div class="actions" style="margin-bottom: 5px;">
-      <%= f.submit :class => 'button' %>
+      <ul>
+      <% @entry.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
     </div>
   <% end %>
+
+  <% render :partial => 'batch', :locals => {f => f} %>
+
+  <br />
+
+  <div class="actions" style="margin-bottom: 5px;">
+    <%= f.submit :class => 'button' %>
+  </div>
 <% end %>

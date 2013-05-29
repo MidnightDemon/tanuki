@@ -34,6 +34,7 @@ class CalendarEntriesController < ApplicationController
 
   def new_batch
     @entries = Array.new(CalendarEntry.get_time_slots.count) { CalendarEntry.new }
+    @entry = CalendarEntry.new
 
 =begin
     for @entries.each_with_index do |entry, index|

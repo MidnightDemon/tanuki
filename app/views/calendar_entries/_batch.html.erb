@@ -1,0 +1,8 @@
+<div class="field">
+  <%= f.label :date %>:
+  <%= f.date_select :date %>
+  <%= f.label "Time slot", :style => "padding-left:20px;" %>:
+  <%= f.select :slot, options_for_select(CalendarEntry.get_time_slots, :selected => @entry.slot) %>
+  <%= f.label :content, :style => "padding-left:20px;" %>:
+  <%= f.text_area :content, :size => '35x1', :style => "position: relative; top:7px;" %>
+</div>
