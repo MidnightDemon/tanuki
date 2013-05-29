@@ -1,0 +1,21 @@
+<%= form_for "entries[]" do |f| %>
+  <% for @entry in @entries %>
+
+    <div class="field">
+      <%= f.label :date %><br />
+      <%= f.date_select :date %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Time slot" %><br />
+      <%= @entry.slot %>
+    </div>
+    <div class="field">
+      <%= f.label :content %><br />
+      <%= f.text_area :content, :size => '80x1' %>
+    </div>
+    <div class="actions" style="margin-bottom: 5px;">
+      <%= f.submit :class => 'button' %>
+    </div>
+  <% end %>
+<% end %>
