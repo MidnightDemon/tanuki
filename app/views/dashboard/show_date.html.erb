@@ -7,7 +7,7 @@
 	  <% elsif @date_entries.size >= 1 %>
 	  	<%= image_tag("icons/Carrot.gif", :class => "earned", :style => "float:right;") %>
 	  <% end %>
-  <h2>Food Entries for <%= @time.strftime("%A, %B %d %Y") %></h2>
+  <h2>Food Entries for <%= Time.current.strftime("%A, %B %d %Y") %></h2>
 
   <% if @date_entries.any? %>
 	  <table class="records">
