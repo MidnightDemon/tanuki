@@ -23,8 +23,7 @@ class DashboardController < ApplicationController
   end  
 
   def show_date
-    @time = Time.new(params[:year], params[:month],params[:day])
-    @date_entries = current_user.calendar_entries.where("date = ?", @time.at_beginning_of_day).order("slot ASC")
+    @date_entries = current_user.entries_for_date(params[:year], params[:month],params[:day])
     
     # render :partial => "show_date"
     # render "edit"

@@ -13,15 +13,18 @@ class User < ActiveRecord::Base
   has_many :calendar_entries
   has_many :tasks
 
+  def entries
+    self.calendar_entries.all.order("slot ASC")
+  end    
+
   def entries_for_date(year, month, date)
     time = Time.new(year, month, date)
 
     #"date > ? AND < ?", time.at_beginning_of_day, time.at_end_of_day
-    self.calendar_entries.where("date = ?", time.at_beginning_of_day)
+    self.calendar_entries.where("date = ?", time.at_beginning_of_day).order("slot ASC")
   end   
 
   def has_entry_for_date(year, month, date)
     self.entries_for_date(year, month, date).size
   end 
-
 end
