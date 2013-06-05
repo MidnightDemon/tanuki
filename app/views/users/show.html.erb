@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<div class="bubble">
+  <h1>User Details</h1>
+  <b>Email:</b>
+  <%= @user.email %>
+  <br />
+  <b>Member Since:</b>
+  <%= @user.created_at %>  
+</div>
+
+<div class="bubble">
+	<h2>Tanukis</h2>
+</div>
+
+<div class="bubble">
+  <h2>Food Entries</h2>
+
+  <% if @user.calendar_entries.any? %>
+	  <table class="records">
+	    <tr>
+	      <th class="header" style="width:140px;">Date</th>
+	      <th class="header" style="width:205px;">Time slot</th>
+	      <th class="header" style="width:400px;">Content</th>
+	      <th></th>
+	      <th></th>
+	      <th></th>
+	    </tr>
+
+	    <% @calendar_entries.each do |entry| %>
+	      <tr>
+	        <td><%= entry.date.to_date() %></td>
+	        <td><%= entry.get_slot_name() %></td>
+	        <td><%= entry.content %></td>
+	        <td><%= link_to 'Show', entry, :class => "button" %></td>
+	        <td><%= link_to 'Edit', edit_calendar_entry_path(entry), :class => "button" %></td>
+	        <td><%= link_to 'Destroy', entry, confirm: 'Are you sure?', method: :delete, :class => "button" %></td>
+	      </tr>
+	    <% end %>
+  	</table>
+  <% else %>
+		<div class="indent-small">No entries to display.</div>
+	<% end %>
+
+	<br />
+  <%= link_to 'Back', dashboard_index_path, :class => "button" %>
+</div>
+

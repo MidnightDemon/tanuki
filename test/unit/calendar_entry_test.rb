@@ -20,22 +20,4 @@ class CalendarEntryTest < ActiveSupport::TestCase
 		assert_not_nil @entry, "Entry creation failed"
 		assert @entry.get_slot_name == "Pre-breakfast snack", "Slot name not as expected"
 	end
-
-  test "entries for date should return a valid entry" do
-  	entry_set = CalendarEntry.entries_for_date(2013, 2, 28)
-
-  	assert_not_nil entry_set, "CalendarEntry.entries_for_date returned nil"
-
-  	entry_set.each do |entry|
-  		assert entry.valid?, "CalendarEntry.entries_for_date returned an invalid record"
-  	end
-  end   
-
-  test "has entry for date should return an integer" do
-    count = CalendarEntry.has_entry_for_date(2013, 2, 28)
-
-    if assert_not_nil count
-    	assert count >= 0 
-    end
-  end	 
 end

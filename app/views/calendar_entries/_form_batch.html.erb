@@ -1,0 +1,21 @@
+<%= form_for(@entry) do |f| %>
+  <% if @entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@entry.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @entry.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% render :partial => 'batch', :locals => {f => f} %>
+
+  <br />
+
+  <div class="actions" style="margin-bottom: 5px;">
+    <%= f.submit :class => 'button' %>
+  </div>
+<% end %>

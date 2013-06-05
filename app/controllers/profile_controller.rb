@@ -1,10 +1,10 @@
 class ProfileController < ApplicationController
   def index
   	@tanukis = current_user.tanukis
-    @gentanukis = Array.new()
+    @gentanukis = Array.new
 
     3.times do
-      gentanuki = Tanuki.new()
+      gentanuki = Tanuki.new
       gentanuki.generate_characteristics
 
     	if([true, false].sample)
@@ -26,7 +26,7 @@ class ProfileController < ApplicationController
 
   def create
     if current_user.tanukis.count < current_user.tanuki_limit
-      @tanuki = @gentanukis[params[:tanuki_id]]
+      @tanuki = Tanuki.new(params[:tanuki])
       @tanuki.user_id = current_user.id
 
       respond_to do |format|
@@ -38,8 +38,6 @@ class ProfileController < ApplicationController
           format.json { render json: @tanuki.errors, status: :unprocessable_entity }
         end
       end
-    else
-      window.confirm("You have no empty habitats! You must evict a tanuki to free a habitat.")
     end
   end   
 end

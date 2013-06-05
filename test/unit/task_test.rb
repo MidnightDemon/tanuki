@@ -10,6 +10,7 @@ class TaskTest < ActiveSupport::TestCase
   	assert !task.save, "Saved the entry without date, slot, content"
 
   	task.description = "Do laundry"
+  	task.user_id = 1
   	assert task.save, "Should now save with description"
 	end
 end

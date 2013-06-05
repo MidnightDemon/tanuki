@@ -14,6 +14,7 @@ Blog::Application.routes.draw do
   # devise_for :users, :path_name => {:sign_in => "login", :sign_out => "logout"}
 
   resources :posts
+  resources :users
   resources :tasks do 
     member do
       put :complete
@@ -43,7 +44,11 @@ Blog::Application.routes.draw do
 
   resources :profile, :controller => "profile_controller", :path_names => { :create => "adopt" }
 
-  resources :calendar_entries
+  resources :calendar_entries do
+    collection do
+      get :new_batch
+    end
+  end
 
   get "home/index"
 

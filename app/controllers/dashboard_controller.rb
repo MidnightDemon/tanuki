@@ -2,7 +2,7 @@ class DashboardController < ApplicationController
 
   def index  
     @currDate = 1
-    @startDate = Time.local(Time.now.year, Time.now.mon, 1)
+    @startDate = Time.local(Time.current.year, Time.current.mon, 1)
   
     # GET /calendarentries, /calendarentries.json, /posts, /posts.json, /tasks, /tasks.json
   
@@ -13,6 +13,9 @@ class DashboardController < ApplicationController
     @tasks_pending = current_user.tasks.where(:completed => false).last(5).reverse;
 
     @all_entries = current_user.calendar_entries.reverse
+
+    @users = User.all
+    @users_search_results = User.search(params[:search])
 
     respond_to do |format|
       format.html { render :layout => 'application' }

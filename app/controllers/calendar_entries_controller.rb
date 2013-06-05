@@ -31,6 +31,37 @@ class CalendarEntriesController < ApplicationController
 	  format.json { render json: @entry }
     end
   end  
+
+  def new_batch
+    @entries = Array.new(CalendarEntry.get_time_slots.count) { CalendarEntry.new }
+    @entry = CalendarEntry.new
+
+=begin
+    for @entries.each_with_index do |entry, index|
+      entry.slot = CalendarEntry.get_slot_name(index)
+    end
+=end
+  
+    respond_to do |format|
+      format.html # new.html.erb
+    format.json { render json: @entry }
+    end
+  end
+
+  def create_batch
+    @entry = CalendarEntry.new(params[:calendar_entry])
+    @entry.user_id = current_user.id
+
+    respond_to do |format|
+      if @entry.save
+        format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
+        format.json { render json: @entry, status: :created, location: @entry }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @entry.errors, status: :unprocessable_entity }
+      end
+    end  
+  end        
   
   # GET /calendar_entries/1/edit
   def edit
