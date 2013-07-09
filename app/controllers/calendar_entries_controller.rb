@@ -28,7 +28,7 @@ class CalendarEntriesController < ApplicationController
 	
     respond_to do |format|
       format.html # new.html.erb
-	  format.json { render json: @entry }
+      format.json { render json: @entry }
     end
   end  
 

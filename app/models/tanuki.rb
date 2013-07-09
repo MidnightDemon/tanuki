@@ -8,7 +8,7 @@ class Tanuki < ActiveRecord::Base
   validates :nature, :presence => true 
   validates :user_id, :presence => true 
 
-  validates_inclusion_of :hue, :in => 0..360
+  validates_inclusion_of :hue, :in => -360..360
   validates_inclusion_of :sepia, :in => 0..360
   validates_inclusion_of :brightness, :in => 0..360
 
@@ -40,22 +40,22 @@ class Tanuki < ActiveRecord::Base
 	end
 
 	def generate_characteristics
-  	self.sepia = rand()*100
-  	self.brightness = (rand()*20) + 90
-  	self.hue = (rand()*30) - 15
-  	self.nature = rand(NATURES.count)
+		self.sepia = rand()*100
+		self.brightness = (rand()*20) + 90
+		self.hue = (rand()*30) - 15
+		self.nature = rand(NATURES.count)
 
-  	rand1 = [true, false].sample
-  	rand2 = [true, false].sample
-  	rand3 = [true, false].sample
+		rand1 = [true, false].sample
+		rand2 = [true, false].sample
+		rand3 = [true, false].sample
 
-  	if(rand1 && rand2 && rand3) 
-  		self.hue = rand(360) - 180
-  	elsif(rand1 && rand2)
-  		self.hue = rand(180) - 90
-  	else(rand1)
-  		self.hue = rand(90) - 45  
-  	end
+		if(rand1 && rand2 && rand3) 
+			self.hue = rand(360) - 180
+		elsif(rand1 && rand2)
+			self.hue = rand(180) - 90
+		else(rand1)
+			self.hue = rand(90) - 45  
+		end
 	end	
 
 	def self.get_random_male_name
@@ -102,8 +102,8 @@ class Tanuki < ActiveRecord::Base
 		NATURES[self.nature]
 	end	
 
-	private
-  def is_under_limit
+	private 
+	def is_under_limit
     return true unless self.user.present?
     self.user.tanukis.count < self.user.tanuki_limit || !self.new_record?
   end		
