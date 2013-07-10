@@ -60,6 +60,20 @@ body {
 	background-repeat: repeat;
 }
 
+#error_explanation {
+	border: 1px solid red;
+	padding: 5px;
+
+	ul {
+		li {
+			background-color: transparent;
+			border-radius: 0;
+			border: none;
+			padding-left: 70px;
+		}
+	}
+}
+
 #user_nav {
 	padding-top:20px;
 	padding-bottom:20px;
@@ -181,7 +195,6 @@ button {
 }
 
 ul {
-	list-style-type: none;
 	padding: 0;
 	margin: 0;
 	position: relative;	

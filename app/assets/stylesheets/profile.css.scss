@@ -1,3 +1,22 @@
 // Place all the styles related to the profile controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.tan0 {
+	position: relative;
+	z-index: 10;
+	top: -150px;
+	left: 60px;
+	display: inline;
+}
+
+.stats {
+	border: 1px solid #c0ce80;
+	border-radius: 10px;
+	background-color: #f9ffed;
+	display: inline-block;
+	padding: 5px;
+	margin-bottom: 10px;
+	vertical-align: top;
+	width: inherit;
+}

@@ -4,13 +4,12 @@ class Tanuki < ActiveRecord::Base
   belongs_to :user
 
   validates :name,  :presence => true
-  validates :male, :presence => true  
   validates :nature, :presence => true 
   validates :user_id, :presence => true 
 
-  validates_inclusion_of :hue, :in => -360..360
-  validates_inclusion_of :sepia, :in => 0..360
-  validates_inclusion_of :brightness, :in => 0..360
+  validates_inclusion_of :hue, :in => -180..180
+  validates_inclusion_of :sepia, :in => 0..100
+  validates_inclusion_of :brightness, :in => 90..110
 
 	MALE_NAMES = Array.new(1)
 	FEMALE_NAMES = Array.new(1)
@@ -44,6 +43,7 @@ class Tanuki < ActiveRecord::Base
 		self.brightness = (rand()*20) + 90
 		self.hue = (rand()*30) - 15
 		self.nature = rand(NATURES.count)
+		self.male = false
 
 		rand1 = [true, false].sample
 		rand2 = [true, false].sample
@@ -56,6 +56,13 @@ class Tanuki < ActiveRecord::Base
 		else(rand1)
 			self.hue = rand(90) - 45  
 		end
+
+	  if([true, false].sample)
+  		self.male = true
+      self.name = Tanuki.get_random_male_name
+  	else
+      self.name = Tanuki.get_random_female_name
+  	end
 	end	
 
 	def self.get_random_male_name
