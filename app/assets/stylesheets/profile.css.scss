@@ -2,11 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.background {
+	position: relative;
+	z-index: 5;
+}
+
 .tan0 {
 	position: relative;
 	z-index: 10;
-	top: -150px;
-	left: 60px;
+	top: -160px;
+	left: 170px;
+	display: inline;
+}
+
+.tan1 {
+	position: relative;
+	z-index: 10;
+	top: -140px;
+	left: 0px;
+	display: inline;
+}
+
+.tan2 {
+	position: relative;
+	z-index: 10;
+	top: -70px;
+	left: 0px;
 	display: inline;
 }
 

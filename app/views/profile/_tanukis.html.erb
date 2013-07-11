@@ -3,37 +3,45 @@
   <div class="indent-small">
     <% if @tanukis.any? %>
       <table style="padding-left: 60px;">
-        <% @tanukis.each_with_index do |t, index| %>
+        <% @tanuki_set.each_with_index do |tanukis, index| %>
           <tr>
-            <td>
+            <td style="width: 300px;">
               <% case index %>
               <% when 0 %>
-                <%= image_tag "forest.png" %>
+                The Forest
+                <%= image_tag "forest.png", :class => "background" %>
               <% when 1 %>
-                <%= image_tag "plains.png" %>
+                The Plains
+                <%= image_tag "plains.png", :class => "background" %>
               <% when 2 %>
-                <%= image_tag "beach.png" %>
+                The Beach
+                <%= image_tag "beach.png", :class => "background" %>
               <% end %>
 
-              <% @tanukis.each_with_index do |tanuki, i| %>
-                <%= image_tag "icons/Tanuki.gif", :id => "gen-tanuki", :class => "tan" + (i % 3).to_s, :style => "-webkit-filter: hue-rotate(" + tanuki.get_hue + "deg) sepia(" + tanuki.get_sepia + "%) brightness(" + tanuki.get_brightness + "%); float: left;" %>
+              <% tanukis.each_with_index do |tanuki, i| %>
+
+                <% if tanuki %>
+                  <%= image_tag "icons/Tanuki.gif", :id => "gen-tanuki", :class => "tan" + i.to_s, :style => "-webkit-filter: hue-rotate(" + tanuki.get_hue + "deg) sepia(" + tanuki.get_sepia + "%) brightness(" + tanuki.get_brightness + "%); float: left;" %>
+                <% end %>
               <% end %>
             </td>
             <td style="width: 300px;">
 
-              <% @tanukis.each_with_index do |tanuki, i| %> 
-                <div class="stats">
-                  <%= tanuki.get_name %>
-                  <% if tanuki.is_male %>
-                    <%= image_tag "boy.png"%>
-                  <% else %>
-                    <%= image_tag "girl.png"%>
-                  <% end %>  
+              <% tanukis.each_with_index do |tanuki, i| %>
+                <% if tanuki %>
+                  <div class="stats">
+                    <%= tanuki.get_name %>
+                    <% if tanuki.is_male %>
+                      <%= image_tag "boy.png"%>
+                    <% else %>
+                      <%= image_tag "girl.png"%>
+                    <% end %>  
 
-                  <span style="font-size: 8px; display: inline;">(<%= tanuki.get_name_meaning %>)</span><br />
-                  <span style="font-size: 10px; margin-bottom: 10px;"><%= tanuki.get_nature %></span>
-                  <div class="button" style="float: right;"><%= link_to 'Release', tanuki, confirm: 'Are you sure?', method: :delete %></div>
-                </div>
+                    <span style="font-size: 8px; display: inline;">(<%= tanuki.get_name_meaning %>)</span><br />
+                    <span style="font-size: 10px; margin-bottom: 10px;"><%= tanuki.get_nature %></span>
+                    <div class="button" style="float: right;"><%= link_to 'Release', tanuki, confirm: 'Are you sure?', method: :delete %></div>
+                  </div>
+                <% end %>
               <% end %>
             </td>
           </tr>

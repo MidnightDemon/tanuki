@@ -17,6 +17,8 @@ class DashboardController < ApplicationController
     @users = User.all
     @users_search_results = User.search(params[:search])
 
+    @tanukis = current_user.tanukis
+
     respond_to do |format|
       format.html { render :layout => 'application' }
       format.json { render json: @entries }
