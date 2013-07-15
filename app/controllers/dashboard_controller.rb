@@ -28,7 +28,9 @@ class DashboardController < ApplicationController
   end  
 
   def show_date
-    @date_entries = current_user.entries_for_date(params[:year], params[:month],params[:day])
+    @date_entries = current_user.entries_for_date(params[:year], params[:month], params[:day])
+    @time = Time.new(params[:year], params[:month], params[:day])
+    @calories = 0
     
     # render :partial => "show_date"
     # render "edit"

@@ -60,6 +60,11 @@ body {
 	background-repeat: repeat;
 }
 
+#notice {
+	text-align: center;
+	color: $olive;
+}
+
 #error_explanation {
 	border: 1px solid red;
 	padding: 5px;

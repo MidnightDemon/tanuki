@@ -25,6 +25,11 @@ class CalendarEntriesController < ApplicationController
   # GET /calendar_entries/new.json
   def new
     @entry = CalendarEntry.new
+    @date = Time.current
+
+    if(params.any?)
+      @date = Time.new(params[:year], params[:month], params[:day])
+    end
 	
     respond_to do |format|
       format.html # new.html.erb
@@ -73,10 +78,11 @@ class CalendarEntriesController < ApplicationController
   def create
     @entry = CalendarEntry.new(params[:calendar_entry])
     @entry.user_id = current_user.id
+    @date = @entry.date
 
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
+        format.html { redirect_to show_date_dashboard_index_path(:year => @date.year, :month => @date.month, :day => @date.day), notice: 'Entry was successfully created.'}
         format.json { render json: @entry, status: :created, location: @entry }
       else
         format.html { render action: "new" }

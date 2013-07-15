@@ -1,10 +1,11 @@
 class CalendarEntry < ActiveRecord::Base
-  attr_accessible :date, :content, :slot
+  attr_accessible :date, :content, :slot, :calories
   
   validates :date, :presence => true
   validates :slot,  :presence => true
   validates :content, :presence => true
   validates :user_id, :presence => true
+  validates :calories, :numericality => { :greater_than_or_equal_to => 0 }
 
   belongs_to :user
 

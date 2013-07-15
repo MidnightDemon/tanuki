@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 div.bubble {
-	width:500px;
+	width:700px;
+	margin: auto;
 	margin: auto;
 }
 
@@ -13,4 +14,21 @@ div.bubble {
 
 textarea {
   resize: none;
+}
+
+table.records tr {
+	height: 30px;
+
+	th.header {
+		width: 100px;
+	  text-align: left;
+	}
+}
+
+div.tanukiStatus img {
+	margin: auto;
+}
+
+div.tanukiStatus {
+	text-align: center;
 }
