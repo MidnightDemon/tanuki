@@ -82,6 +82,6 @@
 
   <br />
   <%= link_to 'New Entry', new_calendar_entry_path(:year => @time.year, :month => @time.month, :day => @time.day), :class => "button" %>
-  <%= link_to "Back", dashboard_index_path, :class => "button", :style => "float:right;" %>
+  <%= link_to "Back", dashboard_index_path(:page => "1"), :class => "button", :style => "float:right;" %>
 </div>
 
