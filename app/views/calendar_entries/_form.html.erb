@@ -29,6 +29,6 @@
   </div>  
   <div class="actions" style="margin-bottom: 5px;">
     <%= f.submit :class => 'button' %>
-    <%= link_to "Back", dashboard_index_path, :class => "button", :style => "float:right;" %>
+    <%= link_to "Back", dashboard_index_path(:page => "1"), :class => "button", :style => "float:right;" %>
   </div>
 <% end %>
