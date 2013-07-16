@@ -71,6 +71,10 @@ class CalendarEntriesController < ApplicationController
   # GET /calendar_entries/1/edit
   def edit
     @entry = CalendarEntry.find(params[:id])
+
+    if @entry.calories.nil?
+      @entry.calories = 0
+    end
   end  
   
   # POST /calendar_entries
