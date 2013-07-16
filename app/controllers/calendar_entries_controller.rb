@@ -14,6 +14,9 @@ class CalendarEntriesController < ApplicationController
   # GET /calendar_entries/1.json
   def show
     @entry = current_user.calendar_entries.find(params[:id])
+    if @entry.calories.nil?
+      @entry.calories = 0
+    end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -26,8 +29,9 @@ class CalendarEntriesController < ApplicationController
   def new
     @entry = CalendarEntry.new
     @date = Time.current
+    @entry.calories = 0
 
-    if(params.any?)
+    if(!params[:year].nil? && !params[:month].nil? && !params[:day].nil?)
       @date = Time.new(params[:year], params[:month], params[:day])
     end
 	
