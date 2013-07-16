@@ -20,6 +20,14 @@ class DashboardController < ApplicationController
 
     @tanukis = current_user.tanukis 
 
+    @page = params[:page]
+
+    if @page.nil?
+      @page = 0
+    else
+      @page = @page.to_i
+    end
+
     respond_to do |format|
       format.html { render :layout => 'application' }
       format.json { render json: @entries }
