@@ -8,28 +8,28 @@
 <% end %>
 
 <ul id="tab-list">
-  <li class="clickable sel">Welcome</li>
-  <li class="clickable notsel">Calendar</li>
-  <li class="clickable notsel">Watching</li>
+  <li class="clickable <% if @page == 0 %>sel<% else %>notsel<%end%>">Welcome</li>
+  <li class="clickable <% if @page == 1 %>sel<% else %>notsel<%end%>">Calendar</li>
+  <li class="clickable <% if @page == 2 %>sel<% else %>notsel<%end%>">Watching</li>
   <% if current_user.admin? %>
-    <li class="clickable notsel">Admin Panel</li>
+    <li class="clickable <% if @page == 3 %>sel<% else %>notsel<%end%>">Admin Panel</li>
   <% end %>
 </ul>
 </ul>
 
 <div class="tab">
-  <div>
+  <div style="<% if @page != 0 %>display: none;<%end%>">
   	<%= render 'welcome' %>
   </div>
-  <div style="display: none;">
+  <div style="<% if @page != 1 %>display: none;<%end%>">
   	<%= render 'calendar' %>
   </div>  
-  <div style="display: none;">
+  <div style="<% if @page != 2 %>display: none;<%end%>">
   	Comming soon
   </div>  
 
   <% if current_user.admin? %>
-    <div style="display: none;">
+    <div style="<% if @page != 3 %>display: none;<%end%>">
       <%= render 'admin' %>
     </div>  
   <% end %>
