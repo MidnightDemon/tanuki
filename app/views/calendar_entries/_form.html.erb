@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :date %><br />
-    <%= f.date_select :date %>
+    <%= f.date_select :date, :default => @date %>
   </div>
   <div class="field">
     <%= f.label "Time slot" %><br />
@@ -23,7 +23,12 @@
     <%= f.label :content %><br />
     <%= f.text_area :content, :size => '80x3' %>
   </div>
+  <div class="field">
+    <%= f.label :calories %><br />
+    <%= f.text_area :calories, :size => '20X1' %>
+  </div>  
   <div class="actions" style="margin-bottom: 5px;">
     <%= f.submit :class => 'button' %>
+    <%= link_to "Back", dashboard_index_path(:page => "1"), :class => "button", :style => "float:right;" %>
   </div>
 <% end %>

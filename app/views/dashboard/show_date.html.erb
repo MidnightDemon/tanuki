@@ -1,19 +1,25 @@
-<%= stylesheet_link_tag :calendar%> 
+<%= stylesheet_link_tag :calendar_entries%> 
 
-<div class="bubble" style="width:805px; margin: auto;">
+<p id="notice"><%= notice %></p>
 
-	<% if @date_entries.size >= 4 %>
-	  	<%= image_tag("icons/apple.png", :class => "earned", :style => "float:right;") %>
-	  <% elsif @date_entries.size >= 1 %>
-	  	<%= image_tag("icons/Carrot.gif", :class => "earned", :style => "float:right;") %>
-	  <% end %>
+<div class="bubble">
+
+	<% if @date_entries.any? %>
+		<% if @date_entries.size >= 4 %>
+		  <%= image_tag("icons/apple.png", :class => "earned", :style => "float:right;") %>
+		<% elsif @date_entries.size >= 1 %>
+		  <%= image_tag("icons/Carrot.gif", :class => "earned", :style => "float:right;") %>
+		<% end %>
+	<% end %>
+
   <h2>Food Entries for <%= @time.strftime("%A, %B %d %Y") %></h2>
 
   <% if @date_entries.any? %>
 	  <table class="records">
 	    <tr>
-	      <th class="header" style="width:150px;">Time slot</th>
-	      <th class="header" style="width:500px;">Content</th>
+	      <th class="header" style="width:170px;">Time slot</th>
+	      <th class="header" style="width:270px;">Content</th>
+	      <th class="header" style="width:100px;">Calories</th>
 	      <th></th>
 	      <th></th>
 	      <th></th>
@@ -23,12 +29,22 @@
 	      <tr>
 	        <td><%= entry.get_slot_name %></td>
 	        <td><%= entry.content %></td>
+	        <td><%= entry.calories %></td>
 	        <td><%= link_to 'Show', entry, :class => "button" %></td>
 	        <td><%= link_to 'Edit', edit_calendar_entry_path(entry), :class => "button" %></td>
 	        <td><%= link_to 'Destroy', entry, confirm: 'Are you sure?', method: :delete, :class => "button" %></td>
 	      </tr>
+	      <% @calories += entry.calories %>
 	    <% end %>
 	  </table>
+
+	  <br />
+	  Today, your count is <b><%=@calories%></b> calories.  <br />
+	  <%if @calories < 2200 %>
+	  	Great! You need only <b><%= 2200 - @calories %></b> calories to hit your goal!
+	  <% else %>
+	  	You've hit your goal!  Congrats!
+	  <% end %>
 
 	  <% if @date_entries.size >= 4 %>
 		  <br /><br />
@@ -65,7 +81,7 @@
 	<% end %>
 
   <br />
-  <%= link_to 'New Entry', new_calendar_entry_path, :class => "button" %><br /><br />
-  <%= link_to "Back", dashboard_index_path, :class => "button" %>
+  <%= link_to 'New Entry', new_calendar_entry_path(:year => @time.year, :month => @time.month, :day => @time.day), :class => "button" %>
+  <%= link_to "Back", dashboard_index_path(:page => "1"), :class => "button", :style => "float:right;" %>
 </div>
 

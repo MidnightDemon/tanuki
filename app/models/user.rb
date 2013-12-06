@@ -13,11 +13,16 @@ class User < ActiveRecord::Base
   has_many :calendar_entries
   has_many :tasks
 
+  def entries
+    self.calendar_entries.all.order("slot ASC")
+  end    
+
   def entries_for_date(year, month, date)
     time = Time.new(year, month, date)
 
     #"date > ? AND < ?", time.at_beginning_of_day, time.at_end_of_day
-    self.calendar_entries.where("date = ?", time.at_beginning_of_day)
+    self.calendar_entries.find(:all, :conditions => ["date between ? and ?",
+         time, time.end_of_day])
   end   
 
   def entry_count_for_date(year, month, date)

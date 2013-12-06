@@ -7,6 +7,30 @@
 
     <h4>Today is <%= Time.current.strftime("%A, %B %d %Y") %></h4>
 
+    <b>Today's Tanuki Task</b>
+    <div style="padding-left:40px;">
+      <% case Time.current.wday %>
+        <% when 1 %>
+          “Climbing Tanuki” – This one is to work out at the gym.
+        <% when 2 %>
+          “Cook cook cook!” – This one will plan a recipe in which to cook with Tiger.  This one must read the recipe in its entirety before making a selection.
+        <% when 3 %>
+          “Tanuki rolling about~” – This one is to work out at the gym.
+        <% when 4 %>
+          “My Creature” – This one is to proudly display his body for Mistresses’ enjoyment.
+        <% when 5 %>
+          Friday – “Night Off!” – This one is to have an enjoyable night of relaxation, whether it be with his Tiger or   friends.  Drunken adventures are encouraged. 
+        <% when 6 %>
+          This one has two (2) tasks to complete <br />
+            “Tigers are Solar Powered!” – This one will watch morning cartoons/shows with his Tiger.<br />
+            “Tanuki is running around! – This one is to work out at the gym.<br />
+        <% when 0 %>
+          Sunday – “This Blonde?” – This one will supply his Tiger with at least ten (10) photos of sluts for her enjoyment. This one may disregard Clause One (1) of Rule XXVII to achieve this but must observe Clause Two (2).
+      <%end%>
+    </div>
+
+    <br />
+
     <div class="calendar">
       <table cellpadding="0" cellspacing="1">
         <tbody>

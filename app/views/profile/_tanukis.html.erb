@@ -1,24 +1,62 @@
 <div class="bubble">
   <h2>Tanuki Habitats</h2>
   <div class="indent-small">
-    <div style="padding-left: 60px;">
-      <% if @tanukis.any? %>
-        <% @tanukis.each do |tanuki| %>
-          <div>
-            <%= image_tag "icons/Tanuki.gif", :id => "gen-tanuki", :style => "float: left;" %>
-            <table>
-              <tr>
-                <td><%= tanuki.get_name %></td>
-                <td><%= tanuki.get_name_meaning %></td>
-                <td><%= tanuki.get_nature %></td>
-              </tr>
-            </table>
-          </div>
+    <% if @tanukis.any? %>
+      <table style="padding-left: 60px;">
+        <% @tanuki_set.each_with_index do |tanukis, index| %>
+          <tr>
+            <td style="width: 300px;">
+              <% case index %>
+              <% when 0 %>
+                The Forest
+                <%= image_tag "forest.png", :class => "background" %>
+              <% when 1 %>
+                The Plains
+                <%= image_tag "plains.png", :class => "background" %>
+              <% when 2 %>
+                The Beach
+                <%= image_tag "beach.png", :class => "background" %>
+              <% end %>
+
+              <% tanukis.each_with_index do |tanuki, i| %>
+
+                <% if tanuki %>
+                  <%= image_tag "icons/Tanuki.gif", :id => "gen-tanuki", :class => "tan" + i.to_s, :style => "-webkit-filter: hue-rotate(" + tanuki.get_hue + "deg) sepia(" + tanuki.get_sepia + "%) brightness(" + tanuki.get_brightness + "%); float: left;" %>
+                <% end %>
+              <% end %>
+            </td>
+            <td style="width: 300px;">
+
+              <% tanukis.each_with_index do |tanuki, i| %>
+                <% if tanuki %>
+                  <div class="stats">
+                    <%= tanuki.get_name %>
+                    <% if tanuki.is_male %>
+                      <%= image_tag "boy.png"%>
+                    <% else %>
+                      <%= image_tag "girl.png"%>
+                    <% end %>  
+
+                    <span style="font-size: 8px; display: inline;">(<%= tanuki.get_name_meaning %>)</span><br />
+                    <span style="font-size: 10px; margin-bottom: 10px;"><%= tanuki.get_nature %></span>
+                    <div class="button" style="float: right;"><%= link_to 'Release', tanuki, confirm: 'Are you sure?', method: :delete %></div>
+                  </div>
+                <% end %>
+              <% end %>
+            </td>
+          </tr>
         <% end %>
-      <% elsif current_user.tanukis.count < current_user.tanuki_limit %>
-        <%= "You have a vacant habitat! See below to adopt a tanuki." %>
-      <% end %>
-    </div>
+      </table>
+    <% end %>
+
+    Your tanuki count is currently <%= current_user.tanukis.count.to_s + "/" + current_user.tanuki_limit.to_s %>
+    <br />
+
+    <% if current_user.tanukis.count < current_user.tanuki_limit %>
+      You have a vacant habitat! See below to adopt a tanuki.
+    <% else %>
+      You are at maximum tanuki capacity!  Release a tanuki to adopt a new one.
+    <% end %>
   </div>
 </div>
 
@@ -27,7 +65,7 @@
   <div class="indent-small">
     <table>
       <tr>
-        <% @gentanukis.each do |tanuki| %>
+        <% @gentanukis.each_with_index do |tanuki, index| %>
           <td style="width: 300px;">
             <%= image_tag "icons/Tanuki.gif", :class => "gen-tanuki", :style => "-webkit-filter: hue-rotate(" + tanuki.get_hue + "deg) sepia(" + tanuki.get_sepia + "%) brightness(" + tanuki.get_brightness + "%); float: left;" %>
 
@@ -40,8 +78,19 @@
               <% end %>
               <div style="font-size: 8px; display: inline;">(<%= tanuki.get_name_meaning %>)</div><br />
               <div style="font-size: 10px; margin-bottom: 10px;"><%= tanuki.get_nature %></div>
-
             </div>
+
+            <% if current_user.tanukis.count < current_user.tanuki_limit %>
+              <%= form_for(tanuki) do |f| %>
+                <%= f.hidden_field :name %>
+                <%= f.hidden_field :male %>
+                <%= f.hidden_field :nature %>
+                <%= f.hidden_field :hue %>
+                <%= f.hidden_field :sepia %>
+                <%= f.hidden_field :brightness %>
+                <%= f.submit "Adopt this tanuki", :class => 'button', :style => 'margin-left: 20px;' %>
+              <% end %>
+            <% end %>
             <br />
           </td>
         <% end %>
