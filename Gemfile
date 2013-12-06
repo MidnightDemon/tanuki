@@ -5,7 +5,7 @@ gem 'rails', '3.2.12'
 gem 'devise'
 gem "railties", "~> 3.2.12"
 gem 'cancan'
-gem 'heroku'
+#gem 'heroku'
 #gem 'factorygirl'
 
 # Bundle edge Rails instead:
