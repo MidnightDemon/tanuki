@@ -20,11 +20,11 @@
   <div style="padding-left: 50px;">
     <% @tanukis.each do |tanuki| %>
       <div style="width: 250px; height: 60px; display: inline-block;">
-        <%= image_tag "icons/Tanuki.gif", :class => "gen-tanuki", :style => "-webkit-filter: hue-rotate(" + tanuki.get_hue + "deg) sepia(" + tanuki.get_sepia + "%) brightness(" + tanuki.get_brightness + "%); float: left;" %>
+        <%= image_tag "icons/Tanuki.gif", :class => "gen-tanuki", :style => "-webkit-filter: hue-rotate(" + tanuki.hue.to_s + "deg) sepia(" + tanuki.sepia.to_s + "%) brightness(" + tanuki.brightness.to_s + "%); float: left;" %>
 
         <div style="padding-left: 60px;">
           <%= tanuki.get_name %>
-          <% if tanuki.is_male %>
+          <% if tanuki.male %>
             <%= image_tag "boy.png"%>
           <% else %>
             <%= image_tag "girl.png"%>

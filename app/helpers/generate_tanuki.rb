@@ -1,21 +1,26 @@
 class GenerateTanuki
-	NAMES = YAML.load_file(Rails.root + "/config/names.yml")
+	NAMES = YAML.load_file(Rails.root + "config/names.yml")
 	NATURES = Array.new(1)
 
-	file = File.new(Rails.root + "/config/natures.txt", "r")
+	file = File.new(Rails.root + "config/natures.txt", "r")
 	while (line = file.gets)
 	  NATURES << line
 	end
 	file.close
 
-	def generate
+	def self.generate
 		tanuki = Tanuki.new
 		tanuki.sepia = rand()*100
 		tanuki.brightness = (rand()*20) + 90
 		tanuki.hue = (rand()*30) - 15
 		tanuki.nature = NATURES[rand(NATURES.count)]
 		tanuki.male = [true, false].sample
-		tanuki.name = NAMES[rand(NAMES.count)]
+
+		if(tanuki.male)
+			tanuki.name = rand(NAMES["male"].count)
+		else
+			tanuki.name = rand(NAMES["female"].count)
+		end
 
 		rand1 = [true, false].sample
 		rand2 = [true, false].sample
@@ -28,5 +33,7 @@ class GenerateTanuki
 		else(rand1)
 			tanuki.hue = rand(90) - 45  
 		end
+
+		tanuki
 	end	
 end

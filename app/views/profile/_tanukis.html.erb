@@ -3,7 +3,7 @@
   <div class="indent-small">
     <% if @tanukis.any? %>
       <table style="padding-left: 60px;">
-        <% @tanuki_set.each_with_index do |tanukis, index| %>
+        <% @tanukis.each_with_index do |tanukis, index| %>
           <tr>
             <td style="width: 300px;">
               <% case index %>
@@ -18,20 +18,20 @@
                 <%= image_tag "beach.png", :class => "background" %>
               <% end %>
 
-              <% tanukis.each_with_index do |tanuki, i| %>
+              <% @tanukis.each_with_index do |tanuki, i| %>
 
                 <% if tanuki %>
-                  <%= image_tag "icons/Tanuki.gif", :id => "gen-tanuki", :class => "tan" + i.to_s, :style => "-webkit-filter: hue-rotate(" + tanuki.get_hue + "deg) sepia(" + tanuki.get_sepia + "%) brightness(" + tanuki.get_brightness + "%); float: left;" %>
+                  <%= image_tag "icons/Tanuki.gif", :id => "gen-tanuki", :class => "tan" + i.to_s, :style => "-webkit-filter: hue-rotate(" + tanuki.hue.to_s + "deg) sepia(" + tanuki.sepia.to_s + "%) brightness(" + tanuki.brightness.to_s + "%); float: left;" %>
                 <% end %>
               <% end %>
             </td>
             <td style="width: 300px;">
 
-              <% tanukis.each_with_index do |tanuki, i| %>
+              <% @tanukis.each_with_index do |tanuki, i| %>
                 <% if tanuki %>
                   <div class="stats">
                     <%= tanuki.get_name %>
-                    <% if tanuki.is_male %>
+                    <% if tanuki.male %>
                       <%= image_tag "boy.png"%>
                     <% else %>
                       <%= image_tag "girl.png"%>
@@ -67,17 +67,17 @@
       <tr>
         <% @gentanukis.each_with_index do |tanuki, index| %>
           <td style="width: 300px;">
-            <%= image_tag "icons/Tanuki.gif", :class => "gen-tanuki", :style => "-webkit-filter: hue-rotate(" + tanuki.get_hue + "deg) sepia(" + tanuki.get_sepia + "%) brightness(" + tanuki.get_brightness + "%); float: left;" %>
+            <%= image_tag "icons/Tanuki.gif", :class => "gen-tanuki", :style => "-webkit-filter: hue-rotate(" + tanuki.hue.to_s + "deg) sepia(" + tanuki.sepia.to_s + "%) brightness(" + tanuki.brightness.to_s + "%); float: left;" %>
 
             <div style="padding-left: 60px;">
               <%= tanuki.get_name %>
-              <% if tanuki.is_male %>
+              <% if tanuki.male %>
                 <%= image_tag "boy.png"%>
               <% else %>
                 <%= image_tag "girl.png"%>
               <% end %>
               <div style="font-size: 8px; display: inline;">(<%= tanuki.get_name_meaning %>)</div><br />
-              <div style="font-size: 10px; margin-bottom: 10px;"><%= tanuki.get_nature %></div>
+              <!--<div style="font-size: 10px; margin-bottom: 10px;"><%= tanuki.get_nature %></div>-->
             </div>
 
             <% if current_user.tanukis.count < current_user.tanuki_limit %>

@@ -2,7 +2,7 @@
 	<h1 id="notice"><%= notice %></h1>
 
 	<% if @tanuki %>
-	  <%= image_tag "icons/Tanuki.gif", :class => "gen-tanuki", :style => "-webkit-filter: hue-rotate(" +@tanuki.get_hue + "deg) sepia(" +@tanuki.get_sepia + "%) brightness(" +@tanuki.get_brightness + "%); float: left;" %>
+	  <%= image_tag "icons/Tanuki.gif", :class => "gen-tanuki", :style => "-webkit-filter: hue-rotate(" +@tanuki.hue.to_s + "deg) sepia(" +@tanuki.sepia.to_s + "%) brightness(" +@tanuki.brightness.to_s + "%); float: left;" %>
 
 	  <div style="padding-left: 60px;">
 	    <%= @tanuki.get_name %>
@@ -12,7 +12,7 @@
 	      <%= image_tag "girl.png"%>
 	    <% end %>
 	    <div style="font-size: 8px; display: inline;">(<%=@tanuki.get_name_meaning %>)</div><br />
-	    <div style="font-size: 10px; margin-bottom: 10px;"><%=@tanuki.get_nature %></div>
+	    <div style="font-size: 10px; margin-bottom: 10px;"><%=@tanuki.nature %></div>
 	  </div>
 	<% end %>
 

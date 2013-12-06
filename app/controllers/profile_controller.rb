@@ -4,7 +4,7 @@ class ProfileController < ApplicationController
     @gentanukis = Array.new
 
     3.times do
-      gentanuki = GenerateTanuki.generatey
+      gentanuki = GenerateTanuki.generate
       @gentanukis << gentanuki
     end
 
