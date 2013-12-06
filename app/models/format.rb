@@ -1,3 +1,4 @@
+=begin
 filer = File.new("f-names.txt", "r")
 filew = File.new("f-names.yml", "w")
 while (line = filer.gets)
@@ -6,3 +7,4 @@ while (line = filer.gets)
 end
 filer.close
 filew.close
+=end
