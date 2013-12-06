@@ -4,16 +4,7 @@ class ProfileController < ApplicationController
     @gentanukis = Array.new
 
     3.times do
-      gentanuki = Tanuki.new
-      gentanuki.generate_characteristics
-
-    	if([true, false].sample)
-    		gentanuki.male = "true"
-        gentanuki.name = Tanuki.get_random_male_name
-    	else
-        gentanuki.male = "false"
-        gentanuki.name = Tanuki.get_random_female_name
-    	end
+      gentanuki = GenerateTanuki.generatey
       @gentanukis << gentanuki
     end
 

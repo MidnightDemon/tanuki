@@ -1,0 +1,847 @@
+female: 
+  - name: AI 
+    descrip: loving
+
+  - name: BAOZHAI
+    descrip: stockade of treasures.
+
+  - name: BIYU
+    descrip: jasper/the precious stone.
+
+  - name: CHANGCHANG
+    descrip: flourishing.
+
+  - name: CHANGYING
+    descrip: flourishing and lustrous.
+
+  - name: CHEN
+    descrip: the morning.
+
+  - name:  CHENGUANG
+    descrip: morning glory.
+
+  - name: CHUNHUA
+    descrip: spring flowers.
+
+  - name: CHUNTAO
+    descrip: spring peach.
+
+  - name: CUIFEN
+    descrip: emerald fragrance.
+
+  - name: DAIYU
+    descrip: black jade.
+
+  - name: DANDAN
+    descrip: cinnabar.
+
+  - name: DONGMEI
+  descrip: younger sister east/winter plums.
+
+  - name: EHUANG
+    descrip: beauty/august.
+
+  - name: FAN
+    descrip: mortal.
+
+  - name: FANG
+    descrip: agreeable; fragrant plants.
+
+  - name: FENFANG
+    descrip: the fragrance of flowers/herbs/etc.
+
+  - name: GUANG
+    descrip: light/glory.
+
+  - name: HONG
+    descrip: red (sign of good luck).
+
+  - name: HUALING
+    descrip: flowery tuber.
+
+  - name: HUAN
+    descrip: joy/satisfaction.
+
+  - name: HUIAN
+    descrip: obliging and quiet.
+
+  - name: HUIFANG
+    descrip: kind and fragrant.
+
+  - name: HUILING
+    descrip: wise jade tinkling.
+
+  - name: HUIQING
+    descrip: liberal good luck.
+
+  - name: JIA
+    descrip: good/fine/auspicious.
+
+  - name: JIAO
+    descrip: delicate/tender/beautiful.
+
+  - name: JIAYI
+    descrip: auspicious one.
+
+  - name: JIAYING
+    descrip: good and clever.
+
+  - name: JIE
+    descrip: cleanliness.
+
+  - name: JINGFEI
+    descrip: quiet not.
+
+  - name: JINGHUA
+    descrip: leek flowers.
+
+  - name: JINJING
+    descrip: bright/clear/crystal.
+
+  - name: JU
+    descrip: chrysanthemum.
+
+  - name:   JUAN
+    descrip: graciousness. 
+
+  - name:   LAN
+    descrip: orchid. 
+
+  - name:   LANFEN
+    descrip: orchid fragrance. 
+
+  - name:   LANYING
+    descrip: blue glitter or blue quartz. 
+
+  - name:   LI
+    descrip: plums. 
+
+  - name:   LIFEN
+    descrip: clever and fragrant like flowers. 
+
+  - name:   LIHUA
+    descrip: beautiful and elegant. 
+
+  - name:   LIJUAN
+    descrip: beautiful and soft. 
+
+  - name:   LILING
+    descrip: white jasmine tinkling. 
+
+  - name:   LIN
+    descrip: a grove/a wood. 
+
+  - name:   LING
+    descrip: clever; intelligent/spiritual. 
+
+  - name:   LIQIN
+    descrip: beautiful harp/lute or zither. 
+
+  - name:   LIQIU
+    descrip: beautiful autumn. 
+
+  - name:   LIU
+    descrip: the willow. 
+
+  - name:   LULI
+    descrip: dewy jasmine. 
+
+  - name:   MEI
+    descrip: a red gem. 
+
+  - name:   MEIFEN
+    descrip: plum fragrance. 
+
+  - name:   MEIFENG
+    descrip: beautiful wind. 
+
+  - name:   MEIHUI
+    descrip: beautiful wisdom. 
+
+  - name:   MEILI
+    descrip: beautiful and graceful. 
+
+  - name:   MEILIN
+    descrip: plum grove. 
+
+  - name:   MEIRONG
+    descrip: beautiful countenance. 
+
+  - name:   MEIXIANG
+    descrip: beautiful fragrance. 
+
+  - name:   MEIXIU
+    descrip: beautiful grace. 
+
+  - name:   MINGXIA
+    descrip: clear halo. 
+
+  - name:   MINGZHU
+    descrip: bright pearl. 
+
+  - name:   NGO-KWANG
+    descrip: beauty-august. 
+
+  - name:   NING
+    descrip: rest/tranquility. 
+
+  - name:   NIU
+    descrip: a girl. 
+
+  - name:   NÜYING
+    descrip: female flower. 
+
+  - name:   O-HUANG
+    descrip: beauty/august. 
+
+  - name:   PEIZHI
+    descrip: respectful. 
+
+  - name:   QI
+    descrip: wondrous. 
+
+  - name:   QIANG
+    descrip: red rose. 
+
+  - name:   QIAO
+    descrip: high/aspiring/proud. 
+
+  - name:   QIAOLIAN
+    descrip: clever always. 
+
+  - name:   QING
+    descrip: sky blue. 
+
+  - name:   QINGGE
+    descrip: love song. 
+
+  - name:   QINGLING
+    descrip: lucky years. 
+
+  - name:   QINGZHAO
+    descrip: clear understanding. 
+
+  - name:   QIU
+    descrip: Autumn. 
+
+  - name:   QIUYUE
+    descrip: Autumn moon. 
+
+  - name:   RONG
+    descrip: honor/glory. 
+
+  - name:   RUOLAN
+    descrip: like an orchid. 
+
+  - name:   SHAN
+    descrip: virtuous/mild. 
+
+  - name:   SHU
+    descrip: pure; virtuous. 
+
+  - name:   SHUANG
+    descrip: lively cheerful. 
+
+  - name:   SHUCHUN
+    descrip: pure beauty. 
+
+  - name:   SONG
+    descrip: pine tree. 
+
+  - name:   SUYIN
+    descrip: simple sounding. 
+
+  - name:   TING
+    descrip: sustaining. 
+
+  - name:   TUNGMEI
+    descrip: winter plums. 
+
+  - name:   WEN
+    descrip: warm/genial. 
+
+  - name:   WENLING
+    descrip: mild jade tinkling. 
+
+  - name:   WENQIAN
+    descrip: refined and modest. 
+
+  - name:   XIA
+    descrip: a halo/vapour; red sky. 
+
+  - name:   XIANG
+    descrip: fragrant/incense. 
+
+  - name:   XIAODAN
+    descrip: little dawn. 
+
+  - name:   XIAOFAN
+    descrip: little ordinary. 
+
+  - name:   XIAOHUI
+    descrip: morning sunlight. 
+
+  - name:   XIAOLI
+    descrip: intellectual. 
+
+  - name:   XIAOLIAN
+    descrip: little compassionate one. 
+
+  - name:   XIAOLING
+    descrip: little jade tinkling. 
+
+  - name:   XIAOQING
+    descrip: blessed with intelligence. 
+
+  - name:   XIFENG
+    descrip: flourishing phoenix. 
+
+  - name:   XINGJUAN
+    descrip: lucky and beautiful. 
+
+  - name:   XIU
+    descrip: fine/beautiful. 
+
+  - name:   XIULAN
+    descrip: beautiful orchid. 
+
+  - name:   XIURONG
+    descrip: beautiful glory. 
+
+  - name:   XIUYING
+    descrip: beautiful flower. 
+
+  - name:   XUE
+    descrip: snow. 
+
+  - name:   YA
+    descrip: elegant/learned/pure. 
+
+  - name:   YAN
+    descrip: swallow (the bird). 
+
+  - name:   YANMEI
+    descrip: flattering and seductive. 
+
+  - name:   YANYU
+    descrip: swallow jade or Yan jade. 
+
+  - name:   YING
+    descrip: clever. 
+
+  - name:   YINGTAI
+    descrip: flower eminent. 
+
+  - name:   YU
+    descrip: jade or rain. 
+
+  - name:   YUAN
+    descrip: original. 
+
+  - name:   YUANJUN
+    descrip: Yuan River ruler. 
+
+  - name:   YUE
+    descrip: moon. 
+
+  - name:   YUN
+    descrip: clouds. 
+
+  - name:   ZHENZHEN
+    descrip: very precious. 
+
+  - name:   ZHILAN
+    descrip: iris orchid. 
+
+  - name:   ZHU
+    descrip: vermilion/red. 
+
+  - name:   ZONGYING
+    descrip: following talent. 
+
+male:
+  - name: BAI
+    descrip: clear/white.  
+
+  - name: BINGWEN
+    descrip: master of arts.  
+
+  - name: BO
+    descrip: waves; also/elder brother.  
+
+  - name: BOHAI
+    descrip: sea waves.  
+
+  - name: BOJING
+    descrip: gentle waves.  
+
+  - name: BOLIN
+    descrip: gentle rain.  
+
+  - name: BOQIN
+    descrip: senior respect.  
+
+  - name: CHANG
+    descrip: old/to grow.  
+
+  - name: CHANGMING
+    descrip: flourishing bright.  
+
+  - name: CHANGPU
+    descrip: flourishing vine.  
+
+  - name: CHAO
+    descrip: surpassing.  
+
+  - name: CHEN
+    descrip: the morning.  
+
+  - name: CHENG
+    descrip: accomplished.  
+
+  - name: CHONGLIN
+    descrip: second brother unicorn.  
+
+  - name: CHUANLI
+    descrip: transmitting propriety.  
+
+  - name: DA
+    descrip: intelligent.  
+
+  - name: DELUN
+    descrip: virtuous order.  
+
+  - name: DEMING
+    descrip: virtue bright.  
+
+  - name: DINGXIANG
+    descrip: stability and fortune.  
+
+  - name: DONG
+    descrip: east/eastern or winter.  
+
+  - name: DONGHAI
+    descrip: eastern sea.  
+
+  - name: DUYI
+    descrip: all-one.  
+
+  - name: ENLAI
+    descrip: favor coming.  
+
+  - name: FA
+    descrip: to send/to issue forth.  
+
+  - name: FAN
+    descrip: mortal.  
+
+  - name: FANG
+    descrip: square/in the sense of correctness.  
+
+  - name: FENG
+    descrip: the point of a weapon/the wind.  
+
+  - name: FENGGE
+    descrip: Phoenix chamber.  
+
+  - name: FU
+    descrip: rich/affluent.  
+
+  - name: GANG
+    descrip: strong/good.  
+
+  - name: GEMING
+    descrip: revolution.  
+
+  - name: GEN
+    descrip: a root.  
+
+  - name: GUANG
+    descrip: light/glory.  
+
+  - name: GUANGLI
+    descrip: making propriety bright.  
+
+  - name: GUI
+    descrip: honorable/dear/valuable.  
+
+  - name: GUIREN
+    descrip: valuing benevolence.  
+
+  - name: GUOLIANG
+    descrip: may the country be good.  
+
+  - name: GUOWEI
+    descrip: may the country be preserved.  
+
+  - name: GUOZHI
+    descrip: may the state govern/may the kingdom heal.  
+
+  - name: HAI
+    descrip: the sea.  
+
+  - name: HAN
+    descrip: Korean.  
+
+  - name: HE
+    descrip: harmonious.  
+
+  - name: HENG
+    descrip: persevering.  
+
+  - name: HONG
+    descrip: wild goose/a swan/great/vast.  
+
+  - name: HONGHUI
+    descrip: great splendour.  
+
+  - name: HUAN
+    descrip: joy/satisfaction.  
+
+  - name: HUANG
+    descrip: imperial/august/majestic.  
+
+  - name: HUI
+    descrip: brightness/splendour.  
+
+  - name: HUILIANG
+    descrip: kind and good.  
+
+  - name: HUIQING
+    descrip: liberal good luck.  
+
+  - name: HUIZHONG
+    descrip: wise loyalty.  
+
+  - name: JIAN
+    descrip: strong/indefatigable.  
+
+  - name: JIANG
+    descrip: a river/especially the Yang-tzŭ.  
+
+  - name: JIANGUO
+    descrip: building the country.  
+
+  - name: JIANJUN
+    descrip: building the army.  
+
+  - name: JIANYU
+    descrip: building the universe.  
+
+  - name: JIAYI
+    descrip: auspicious one.  
+
+  - name: JING
+    descrip: the capital.  
+
+  - name: JINGGUO
+    descrip: administering the country.  
+
+  - name: JINHAI
+    descrip: golden sea.  
+
+  - name: JUNJIE
+    descrip: handsome hero.  
+
+  - name: KANG
+    descrip: well-being.  
+
+  - name: LEI
+    descrip: thunder.  
+
+  - name: LI
+    descrip: plums.  
+
+  - name: LIANG
+    descrip: clear/bright.  
+
+  - name: LING
+    descrip: clever/intelligent/spiritual.  
+
+  - name: LIQIN
+    descrip: beautiful harp/lute or zither.  
+
+  - name: LIU
+    descrip: the willow.  
+
+  - name: LIWEI
+    descrip: profit and greatness.  
+
+  - name: LONGWEI
+    descrip: dragon greatness.  
+
+  - name: MEILIN
+    descrip: plum grove.  
+
+  - name: MENGYAO
+    descrip: superior handsomeness.  
+
+  - name: MINGLI
+    descrip: bright propriety.  
+
+  - name: MINGYU
+    descrip: bright jade.  
+
+  - name: NIANZU
+    descrip: thinking of ancestors.  
+
+  - name: NIU
+    descrip: the ox.  
+
+  - name: PEIZHI
+    descrip: respectful.  
+
+  - name: PENG
+    descrip: the rock/a fabulous bird.  
+
+  - name: PENGFEI
+    descrip: flight of the roc.  
+
+  - name: PING
+    descrip: tranquil.  
+
+  - name: QI
+    descrip: arising or wondrous.  
+
+  - name: QIANG
+    descrip: strong/good.  
+
+  - name: QIAO
+    descrip: high/aspiring/proud.  
+
+  - name: QING
+    descrip: sky blue.  
+
+  - name: QINGSHAN
+    descrip: celebration goodness.  
+
+  - name: QINGSHENG
+    descrip: celebrating birth.  
+
+  - name: QIQIANG
+    descrip: enlightenment and strength.  
+
+  - name: QIU
+    descrip: Autumn.  
+
+  - name: QUAN
+    descrip: a spring.  
+
+  - name: RENSHU
+    descrip: benevolent forbearance.  
+
+  - name: RONG
+    descrip: honor/glory.  
+
+  - name: RU
+    descrip: scholar.  
+
+  - name: SHAN
+    descrip: hills/mountains.  
+
+  - name: SHANYUAN
+    descrip: mountain spring.  
+
+  - name: SHAOQING
+    descrip: young blue.  
+
+  - name: SHEN
+    descrip: cautious or deep.  
+
+  - name: SHI
+    descrip: mankind.  
+
+  - name: SHIHONG
+    descrip: mankind is red.  
+
+  - name: SHIRONG
+    descrip: scholar of honor.  
+
+  - name: SHOUSHAN
+    descrip: longevity mountain.  
+
+  - name: SHUN
+    descrip: obedient/a legendary ruler.  
+
+  - name: SHUNYUAN
+    descrip: obedient to the Mongol rulers.  
+
+  - name: SONG
+    descrip: pine tree.  
+
+  - name: TAO
+    descrip: the way.  
+
+  - name: TENGFEI
+    descrip: soaring high.  
+
+  - name: TINGGUANG
+    descrip: glory of the court.  
+
+  - name: TINGFENG
+    descrip: thunderbolt peak.  
+
+  - name: WEI
+    descrip: high/lofty or heroic/remarkable.  
+
+  - name: WEIMIN
+    descrip: people's hero.  
+
+  - name: WEISHENG
+    descrip: greatness is born.  
+
+  - name: WEIYUAN
+    descrip: preserving depth.  
+
+  - name: WEIZHE
+    descrip: great sage.  
+
+  - name: WEN
+    descrip: genial.  
+
+  - name: WENCHENG
+    descrip: genial and accomplished.  
+
+  - name: WENYAN
+    descrip: genial speaker.  
+
+  - name: XIANG
+    descrip: flying/soaring.  
+
+  - name: XIANLIANG
+    descrip: worthy brightness.  
+
+  - name: XIAOBO
+    descrip: little wrestler.  
+
+  - name: XIAODAN
+    descrip: little dawn.  
+
+  - name: XIAOJIAN
+    descrip: little healthy.  
+
+  - name: XIAOLI
+    descrip: intellectual.  
+
+  - name: XIAOSHENG
+    descrip: little birth.  
+
+  - name: XIAOTONG
+    descrip: red sky child.  
+
+  - name: XIAOSI
+    descrip: filial thoughts.  
+
+  - name: XIAOWEN
+    descrip: red sky warm.  
+
+  - name: XIN
+    descrip: new.  
+
+  - name: XING
+    descrip: a star; a spark.  
+
+  - name: XIU
+    descrip: fine/beautiful.  
+
+  - name: XUE
+    descrip: studious.  
+
+  - name: XUEQIN
+    descrip: snow-white celery.  
+
+  - name: YAN
+    descrip: swallow (the bird)  
+
+  - name: YANG
+    descrip: the sun.  
+
+  - name: YANLIN
+    descrip: swallow forest.  
+
+  - name: YAOTING
+    descrip: honoring the courtyard.  
+
+  - name: YAOZU
+    descrip: honoring the ancestors.  
+
+  - name: YE
+    descrip: leaf.  
+
+  - name: YI
+    descrip: a rite/a rule/a pattern/correct.  
+
+  - name: YING
+    descrip: clever.  
+
+  - name: YINGJIE
+    descrip: gallant hero.  
+
+  - name: YONG
+    descrip: affable/harmonious.  
+
+  - name: YONGLIANG
+    descrip: forever bright.  
+
+  - name: YONGNIAN
+    descrip: eternal years.  
+
+  - name: YONGRUI
+    descrip: forever lucky.  
+
+  - name: YONGZHENG
+    descrip: forever righteous.  
+
+  - name: YOU
+    descrip: excellent/abundant/luxurious.  
+
+  - name: YUAN
+    descrip: original.  
+
+  - name: YUANJUN
+    descrip: fountain of joy.  
+
+  - name: YUN
+    descrip: clouds.  
+
+  - name: YUNRU
+    descrip: cloud-like.  
+
+  - name: YUSHENG
+    descrip: plumed life.  
+
+  - name: ZEDONG
+    descrip: kindness to the east.  
+
+  - name: ZEMIN
+    descrip: kindness to the people.  
+
+  - name: ZHAOHUI
+    descrip: brightness returns.  
+
+  - name: ZHEN
+    descrip: greatly astonished.  
+
+  - name: ZHENGSHENG
+    descrip: righteous sounding.  
+
+  - name: ZHENGZHONG
+    descrip: feudal state of many.  
+
+  - name: ZHIQIANG
+    descrip: the will is strong.  
+
+  - name: ZHONG
+    descrip: honest/loyal.  
+
+  - name: ZHU
+    descrip: vermilion/red.  
+
+  - name: ZIAN
+    descrip: son of peace.  
+
+  - name: ZIHAO
+    descrip: son heroic.  
+
+  - name: ZIXIN
+    descrip: son new. 
