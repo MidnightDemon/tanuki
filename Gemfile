@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
+ruby '1.9.2'
 
 gem 'execjs'
 gem 'rails', '3.2.12'
-#gem 'ruby', '1.9.2'
 
 gem 'devise'
 gem "railties", "~> 3.2.12"
